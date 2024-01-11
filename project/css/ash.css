@@ -1,0 +1,238 @@
+:root{
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  /* background-color: #242424; */
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  --pic: url(/comiepropganda.png);
+  --grey: rgb(50, 50, 75);
+  --someVar: RED;
+
+
+}
+
+body {
+    background-color: rgba(75, 75, 100);
+    font-size: 5vh;
+    font-family: "Open Sans", sans-serif;
+    margin: 0%;
+    font-family: Arial, sans-serif;
+    background-image: var(--pic);
+    background-size: 100%;
+    
+    color: aliceblue;
+  }
+  .top-bar {
+    padding-left: 1vw;
+    padding-top: 1vw;
+    width: 100vw;
+    background-color: var(--someVar);
+  }
+  .top-bar img {
+    height: 5vh;
+   
+  }
+  .flex-container {
+    padding-top: 20vh;
+    display: flex;
+    width: 100vw;
+    justify-content: space-evenly;
+    flex-flow: row wrap;
+    text-align: center;
+    align-items: center;
+    font-size: clamp(16px, 4vw, 22px);
+  
+  }
+  
+  .flex-container img {
+    width: 20vh;
+    margin: 1vw;
+  }
+  
+  .grow {
+    align-content: center;
+    
+    background-color: rgba(128, 128, 128, 0.75);
+    display: flex;
+    padding: 1vw 1vw 1vw 1vw;
+    border-radius: 1vw;
+    height: 35vh;
+    width: 400px;
+    transition: all 2s;
+    overflow: hidden;
+    transform-box: fill-box;
+    box-shadow: 1vw 1vh 1vw 1vh rgb(0, 0, 0, 0.5);
+    line-height : 25px;
+    text-align: center;
+  }
+  
+  .grow:hover {
+    background-color: grey;
+    height: 75vh;
+    position: relative;
+    z-index: 100;
+    transform: scale(1.25);
+  }
+  
+  .grow:hover div {
+    position: relative;
+    transition: transform 0.75s ease-in-out;
+  }
+  body h2 {
+    display: block;
+    margin-block-start: 1vw;
+    margin-block-end: 1vw;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+  }
+  
+  h1 {
+    text-align: center;
+    color: #06d85f;
+    margin-top: 80px;
+  }
+  h2 {
+    text-align: center;
+    
+  }
+  
+  body h4 {
+    text-align: center;
+    
+  }
+  
+  h6 {
+    text-align: center;
+  }
+  
+  
+  
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #00000000;
+    min-width: 200px;
+    z-index: 1;
+    margin-top: 20px;
+  }
+  
+  .dropdown-content a {
+    background-color: cadetblue;
+    color: white;
+    font-family: helvetica;
+    padding: 5px 5px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  hr.solid {
+   
+    border-left: none;
+    border-right: none;
+    border-top: 1px solid gray;
+    border-bottom: none;
+  }
+  
+  .show {
+    display: block;
+  }
+
+
+  
+
+  .light-mode {
+--primary: var(--grey);
+--text: var(--white);
+  }
+
+  .dark-mode{
+--primary: var(--green);
+--text: var(--black);
+  }
+
+  .overlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0, 0, 0, 0.7);
+    transition: opacity 500ms;
+    visibility: hidden;
+    opacity: 0;
+    justify-content: center;
+  }
+  .overlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+
+
+  .popup {
+    margin: 70px auto;
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    width: 70%;
+    position: relative;
+    transition: all 5s ease-in-out;
+  }
+  
+  .popup h2 {
+    margin-top: 0;
+    color: #333;
+    font-family: Tahoma, Arial, sans-serif;
+  }
+  .popup .close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    transition: all 200ms;
+    font-size: 30px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #333;
+  }
+  .popup .close:hover {
+    color: #06D85F;
+  }
+  .popup .content {
+    background-size: cover;
+    max-height: 30%;
+    overflow: auto;
+    font-size: 1vw;
+    color: #333;
+  }
+  
+  @media screen and (max-width: 700px){
+    .box{
+      width: 70%;
+    }
+    .popup{
+      width: 70%;
+    }
+  }
+  
+
+  p{
+    width: 69VW;
+
+
+  }
