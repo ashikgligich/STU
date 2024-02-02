@@ -86,3 +86,15 @@ import SupportIcon from './icons/IconSupport.vue'
     <a href="https://vuejs.org/sponsor/" target="_blank" rel="noopener">becoming a sponsor</a>.
   </WelcomeItem>
 </template>
+
+
+<template>
+  <div>
+<h1 v-if="test">good</h1>
+<h1 v-else>bad</h1>
+  </div>
+</template>
+
+<script setup>
+const test = false;
+</script>
