@@ -4,6 +4,7 @@
       <h1 v-else>Incorrect</h1>
       <h2 v-for="animal in animals" :key="animal">{{ animal }}</h2>
     </div>
+    
   </template>
   
   <script setup>
