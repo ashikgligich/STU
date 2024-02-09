@@ -1,7 +1,7 @@
 <template>
     <head>
 		<meta charset="utf-8">
-		<title>My first three.js app</title>
+		<title>My second three.js app</title>
 		
 	</head>
     <div>
@@ -12,7 +12,19 @@
 </template>
 
 <script setup>
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 
+const loader = new GLTFLoader();
+
+loader.load( 'starscape-frontend\public\Assembly 1.gltf', function ( gltf ) {
+
+	scene.add( gltf.scene );
+
+}, undefined, function ( error ) {
+
+	console.error( error );
+
+} );
 
 import * as THREE from 'three';
 
