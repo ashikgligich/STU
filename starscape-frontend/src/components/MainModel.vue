@@ -13,7 +13,7 @@
 
 <script setup>
 
-
+/* 
 
 
 import * as THREE from 'three';
@@ -33,7 +33,7 @@ renderer.render( scene, camera );
 
 
 
-
+ 
 
 
 
@@ -41,14 +41,19 @@ import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
 const loader = new GLTFLoader();
 
 
-loader.load( 'Assembly.gltf', function ( gltf ) {
+loader.load( '\public\Assembly1.gltf', function ( gltf ) {
 
 	scene.add( gltf.scene );
 	renderer.render( scene, camera )
-
+	gltf.animations; // Array<THREE.AnimationClip>
+	gltf.scene; // THREE.Group
+	gltf.scenes; // Array<THREE.Group>
+	gltf.cameras; // Array<THREE.Camera>
+	gltf.asset; // Object
 }, undefined, function ( error ) {
 
 	console.error( error );
+	console.trace();
 
 } );
 
@@ -69,6 +74,41 @@ function animate() {
 renderer.render( scene, camera );
 
 console.log('/starscape-frontend\\public\\JUT.gltf')
+
+
+ */
+
+// Import necessary modules
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
+
+// Create a scene
+const scene = new THREE.Scene();
+
+// Create a camera
+const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+camera.position.z = 5;
+
+// Create a renderer
+const renderer = new THREE.WebGLRenderer();
+renderer.setSize(window.innerWidth, window.innerHeight);
+document.body.appendChild(renderer.domElement);
+
+// Load the .gltf model
+const loader = new GLTFLoader();
+loader.load('\public\Part1.gltf', function (gltf) {
+    scene.add(gltf.scene);
+}, undefined, function (error) {
+    console.error(error);
+	console.trace();	
+});
+
+// Create a render loop
+function animate() {
+    requestAnimationFrame(animate);
+    renderer.render(scene, camera);
+}
+animate();
 
 </script>
 
