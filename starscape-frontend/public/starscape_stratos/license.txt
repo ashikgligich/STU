@@ -1,0 +1,11 @@
+Model Information:
+* title:	Starscape Stratos
+* source:	https://sketchfab.com/3d-models/starscape-stratos-94c3e5e73be44caaa6317ec788b04893
+* author:	TheBeztAllianz3 (https://sketchfab.com/TheBeztAllianz3)
+
+Model License:
+* license type:	CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
+* requirements:	Author must be credited. No commercial use. Modified versions must have the same license.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Starscape Stratos" (https://sketchfab.com/3d-models/starscape-stratos-94c3e5e73be44caaa6317ec788b04893) by TheBeztAllianz3 (https://sketchfab.com/TheBeztAllianz3) licensed under CC-BY-NC-SA-4.0 (http://creativecommons.org/licenses/by-nc-sa/4.0/)
