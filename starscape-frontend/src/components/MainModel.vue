@@ -84,10 +84,14 @@ import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js';
 
 // Create a scene
 const scene = new THREE.Scene();
+scene.background = new THREE.Color(0xCCCCCC);
 
 // Create a camera
-const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+const camera = new THREE.PerspectiveCamera(50, window.innerWidth / window.innerHeight, 0.1, 1000);
+
 camera.position.z = 5;
+
+
 
 // Create a renderer
 const renderer = new THREE.WebGLRenderer();
@@ -96,8 +100,10 @@ document.body.appendChild(renderer.domElement);
 
 // Load the .gltf model
 const loader = new GLTFLoader();
-loader.load('\public\Part1.gltf', function (gltf) {
+loader.load('Assembly1.gltf', function (gltf) {
+	console.log(gltf);
     scene.add(gltf.scene);
+
 }, undefined, function (error) {
     console.error(error);
 	console.trace();	
@@ -108,7 +114,8 @@ function animate() {
     requestAnimationFrame(animate);
     renderer.render(scene, camera);
 }
-animate();
+//animate();
+renderer.render(scene, camera);
 
 </script>
 
