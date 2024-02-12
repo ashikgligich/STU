@@ -20,4 +20,13 @@
 <script setup>
 import MainModel from '../components/MainModel.vue'
 
+
+let url = 'https://api.sheety.co/9aee2b657f33b4b9cde173e45d295b27/sTarscape/ships';
+fetch(url)
+.then((response) => response.json())
+.then(json => {
+  // Do something with the data
+  console.log(json.ships);
+});
+
 </script>
