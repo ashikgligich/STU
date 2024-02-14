@@ -3,10 +3,9 @@
     <div class="about">
       <h1>This is an about page</h1>
       <form v-if="gotData">
-        <label for="cars">Choose a car:</label>
-        <select name v-for="ship in ships.ships" :key="ship.id" id="cars">
-          <option value="ship">{{ ship.ship }}</option>
-        </select>
+        <div v-for="ship in ships.ships" :key="ship.id">
+          <button>{{ ship.ship }}</button>
+        </div>
       </form>
       <h4></h4>
     </div>

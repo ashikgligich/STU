@@ -12,8 +12,6 @@ export const shipStore = defineStore('shipStore', () => {
   return {
     currentShip,
     currentTurret,
-    shipList,
-    turretList,
     currentModule,
     currentModuleLoadout,
     currentTurretLoadout,
