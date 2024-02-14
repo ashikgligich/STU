@@ -29,7 +29,9 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import MainModel from '../components/MainModel.vue'
+import shipStore from '../stores/store.js'
 
+const store = shipStore()
 let ships = ref()
 let gotData = ref(false)
 
