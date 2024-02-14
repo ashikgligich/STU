@@ -8,5 +8,5 @@ export const shipStore = defineStore('shipStore', () => {
   let currentShip = ref() // use for selecting ships
   let currentTurret = ref() // use for selecting turrets
 
-  return { currentShip, currentTurret }
+  return { currentShip, currentTurret, shipList, turretList }
 })
