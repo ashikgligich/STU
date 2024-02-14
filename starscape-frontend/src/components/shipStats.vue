@@ -21,6 +21,9 @@ onMounted(() => {
     </div>
     <div>
       <h3>Ship Combat Stats:</h3>
+      <h4>Small Turret Slots: {{ ship.s }}</h4>
+      <h4>Medium Turret Slots: {{ ship.m }}</h4>
+      <h4>Point Defense Turret Slots: {{ ship.pdt }}</h4>
       <h4>Shield: {{ ship.shield }}</h4>
       <h4>Shield Regen: {{ ship.shieldRegen }}/s</h4>
       <h4>Shield Deflection: {{ ship.deflection }}</h4>
