@@ -1,10 +1,11 @@
 <template>
   <div>
     <div class="about">
-      <h1>This is an about page</h1>
+      <h1>Ships</h1>
       <form v-if="gotData">
         <div v-for="ship in ships.ships" :key="ship.id">
           <button>{{ ship.ship }}</button>
+          
         </div>
       </form>
       <h4></h4>
