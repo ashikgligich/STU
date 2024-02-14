@@ -4,8 +4,8 @@
       <h1>This is an about page</h1>
       <form v-if="gotData">
         <label for="cars">Choose a car:</label>
-        <select name v-for="ship in ships.value" :key="ship" id="cars">
-          <option value="ship.ship">{{ ship.ship }}</option>
+        <select name v-for="ship in ships.ships" :key="ship.id" id="cars">
+          <option value="ship">{{ ship.ship }}</option>
         </select>
       </form>
       <h4></h4>
@@ -29,7 +29,7 @@
 <script setup>
 import { onMounted, ref } from 'vue'
 import MainModel from '../components/MainModel.vue'
-import shipStore from '../stores/store.js'
+import { shipStore } from '../stores/store.js'
 
 const store = shipStore()
 let ships = ref()
@@ -46,5 +46,6 @@ async function fetchShips() {
 }
 onMounted(() => {
   fetchShips()
+  console.log(ships)
 })
 </script>
