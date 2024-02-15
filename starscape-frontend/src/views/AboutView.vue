@@ -23,12 +23,13 @@
 
 <script setup>
 import { onMounted, ref } from 'vue'
-import MainModel from '../components/MainModel.vue'
+import { useRouter } from 'vue-router'
 import { shipStore } from '../stores/store.js'
 
 const store = shipStore()
 let ships = ref()
 let gotData = ref(false)
+const router = useRouter()
 
 async function fetchShips() {
   const response = await fetch(
@@ -43,6 +44,7 @@ async function fetchShips() {
 function selectShip(ship) {
   store.$patch({ currentShip: ship })
   console.log(store.currentShip)
+  router.push('/stats')
 }
 
 onMounted(() => {

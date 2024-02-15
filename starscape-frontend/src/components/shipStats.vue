@@ -1,13 +1,11 @@
 <script setup>
 import { onMounted } from 'vue'
-import shipStore from '../stores/store.js'
+import { shipStore } from '../stores/store.js'
 
 const store = shipStore()
-let ship
-
-onMounted(() => {
-  ship = store.currentShip
-})
+let ship = store.currentShip
+console.log(store.currentShip)
+console.log(ship)
 </script>
 
 <template>
@@ -45,7 +43,7 @@ onMounted(() => {
       <h4>Cargo Slots: {{ ship.cargo }} Slots</h4>
     </div>
     <div>
-      <h3>Rigs and Modules</h3>
+      <h3>Rigs and Modules:</h3>
       <h4>Weapon Rigs: {{ ship.wep }} Slots</h4>
       <h4>Defense Rigs: {{ ship.def }} Slots</h4>
       <h4>Engine Rigs: {{ ship.eng }} Slots</h4>
