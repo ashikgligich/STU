@@ -11,7 +11,7 @@
             <div v-for="ship in ships" :key="ship.id">
               <button @click="selectShip(ship)">
                 {{ ship.ship }}
-                <img :src="ship.img" :alt="'insert image of ' + ship.ship + ' here'" />
+                <img :src="ship.pic" :alt="'insert image of ' + ship.ship + ' here'" />
               </button>
             </div>
           </div>
@@ -19,7 +19,7 @@
             <div v-for="ship in store.shipFilter" :key="ship.id">
               <button @click="selectShip(ship)">
                 {{ ship.ship }}
-                <img :src="ship.img" :alt="'insert image of ' + ship.ship + ' here'" />
+                <img :src="ship.pic" :alt="'insert image of ' + ship.ship + ' here'" />
               </button>
             </div>
           </div>
