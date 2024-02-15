@@ -84,7 +84,8 @@ const shipClasses = [
   'Fighter',
   'Interceptor',
   'Hauler',
-  'Miner'
+  'Miner',
+  'All'
 ]
 
 async function fetchShips() {
@@ -104,16 +105,18 @@ function selectShip(ship) {
 }
 
 function selectClass(shipClass) {
-  console.log(ships.value)
   let tempShips = []
   ships.value.forEach((ship) => {
     if (ship.class == shipClass) {
       tempShips.push(ship)
+      store.$patch({ shipFilter: tempShips })
+      filterOn.value = true
+    } else if (shipClass == 'All') {
+      filterOn.value = false
+      store.$patch({ shipFilter: [] })
+      return
     }
   })
-  store.$patch({ shipFilter: tempShips })
-  console.log(store.shipFilter)
-  filterOn.value = true
 }
 
 onMounted(() => {
