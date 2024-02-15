@@ -2,16 +2,12 @@
   <div>
     <div class="about">
       <h1>This is an about page</h1>
-      <form v-if="gotData">
+      <div v-if="gotData">
         <div v-for="ship in ships.ships" :key="ship.id">
-          <button>{{ ship.ship }}</button>
+          <button @click="selectShip(ship)">{{ ship.ship }}</button>
         </div>
-      </form>
-      <h4></h4>
+      </div>
     </div>
-    <main>
-      <MainModel />
-    </main>
   </div>
 </template>
 
@@ -43,6 +39,16 @@ async function fetchShips() {
   gotData.value = true
   console.log(array)
 }
+
+function selectShip(ship) {
+  store.$patch({ currentShip: ship })
+  console.log(store.currentShip)
+}
+
+function hi() {
+  console.log('hi')
+}
+
 onMounted(() => {
   fetchShips()
   console.log(ships)
