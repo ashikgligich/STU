@@ -1,12 +1,22 @@
 <template>
   <div>
     <div class="about">
-      <h1>This is an about page</h1>
+      <h1></h1>
+      <div class="shipselector">
+        <table align="center">
+            <tbody>
       <div v-if="gotData">
+        
         <div v-for="ship in ships.ships" :key="ship.id">
-          <button @click="selectShip(ship)">{{ ship.ship }}</button>
+          <tr>
+          <td align="right" @click="selectShip(ship)">{{ ship.ship }}</td>
+          <td align="right" img url="{{ ship.pic }}"></td>
+        </tr>
         </div>
       </div>
+    </tbody>
+          </table>
+    </div>
     </div>
   </div>
 </template>
@@ -18,6 +28,41 @@
     display: flex;
     align-items: center;
   }
+}
+table {
+  border-collapse: separate;
+  text-indent: initial;
+  border-spacing: 2px;
+ 
+    margin: 0px;
+    padding: 0px;
+    border: 0;
+    text-align: center;
+    
+  font-family: arial,helvetica,sans-serif;
+  font-size: 16px;
+
+  text-align: right
+ 
+  
+  
+
+
+}
+td {
+  display: table-cell;
+  vertical-align: inherit;
+  
+}
+
+.shipselector {
+  float: left;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  
 }
 </style>
 
