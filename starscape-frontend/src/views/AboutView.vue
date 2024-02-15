@@ -45,10 +45,6 @@ function selectShip(ship) {
   console.log(store.currentShip)
 }
 
-function hi() {
-  console.log('hi')
-}
-
 onMounted(() => {
   fetchShips()
   console.log(ships)
