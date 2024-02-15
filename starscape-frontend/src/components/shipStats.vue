@@ -40,6 +40,14 @@ let shipMobilityStats = [
   { stat: ['Cargo Slots', ship.cargo] }
 ]
 
+let rigsNmodules = [
+  { stat: ['Weapon Rigs', ship.wep] },
+  { stat: ['Defense Rigs', ship.def] },
+  { stat: ['Engine Rigs', ship.eng] },
+  { stat: ['Reactor Rigs', ship.rct] },
+  { stat: ['Subsystems', ship.subsystems] }
+]
+
 function back() {
   router.push('/about')
 }
@@ -88,15 +96,13 @@ function back() {
     </div>
     <div>
       <h3>Rigs and Modules:</h3>
-      <h4>Weapon Rigs: {{ ship.wep }} Slots</h4>
-      <h4>Defense Rigs: {{ ship.def }} Slots</h4>
-      <h4>Engine Rigs: {{ ship.eng }} Slots</h4>
-      <h4>Reactor Rigs: {{ ship.rct }} Slots</h4>
-      <h4>Subsystems: {{ ship.subsystems }} Slots</h4>
+      <div v-for="modules in rigsNmodules" :key="modules">
+        <h4>{{ modules.stat[0] }}: {{ modules.stat[1] }} Slots</h4>
+      </div>
     </div>
     <div v-if="ship.special">
-      <h4>Special Effects:</h4>
-      <h5>{{ ship.special }}</h5>
+      <h3>Special Effects:</h3>
+      <h4>{{ ship.special }}</h4>
     </div>
   </div>
 </template>
