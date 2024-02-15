@@ -2,13 +2,26 @@
   <div>
     <div class="about">
       <h1></h1>
+      <div class="filterbutton" v-for="shipClass in shipClasses" :key="shipClass">
+        <button @click="selectClass(shipClass)">{{ shipClass }}</button>
+      </div>
       <div class="shipselector">
         <div v-if="gotData">
-          <div v-for="ship in ships.ships" :key="ship.id">
-            <button @click="selectShip(ship)">
-              {{ ship.ship }}
-              <img :src="ship.img" :alt="'insert image of ' + ship.ship + ' here'" />
-            </button>
+          <div v-if="!filterOn">
+            <div v-for="ship in ships" :key="ship.id">
+              <button @click="selectShip(ship)">
+                {{ ship.ship }}
+                <img :src="ship.img" :alt="'insert image of ' + ship.ship + ' here'" />
+              </button>
+            </div>
+          </div>
+          <div v-if="filterOn">
+            <div v-for="ship in store.shipFilter" :key="ship.id">
+              <button @click="selectShip(ship)">
+                {{ ship.ship }}
+                <img :src="ship.img" :alt="'insert image of ' + ship.ship + ' here'" />
+              </button>
+            </div>
           </div>
         </div>
       </div>
@@ -60,16 +73,26 @@ import { useRouter } from 'vue-router'
 import { shipStore } from '../stores/store.js'
 
 const store = shipStore()
+let filterOn = ref(false)
 let ships = ref()
 let gotData = ref(false)
 const router = useRouter()
+const shipClasses = [
+  'Destroyer',
+  'Frigate',
+  'Corvette',
+  'Fighter',
+  'Interceptor',
+  'Hauler',
+  'Miner'
+]
 
 async function fetchShips() {
   const response = await fetch(
     'https://api.sheety.co/9aee2b657f33b4b9cde173e45d295b27/sTarscape/ships'
   )
   const array = await response.json()
-  ships.value = array
+  ships.value = array.ships
   gotData.value = true
   console.log(array)
 }
@@ -78,6 +101,19 @@ function selectShip(ship) {
   store.$patch({ currentShip: ship })
   console.log(store.currentShip)
   router.push('/stats')
+}
+
+function selectClass(shipClass) {
+  console.log(ships.value)
+  let tempShips = []
+  ships.value.forEach((ship) => {
+    if (ship.class == shipClass) {
+      tempShips.push(ship)
+    }
+  })
+  store.$patch({ shipFilter: tempShips })
+  console.log(store.shipFilter)
+  filterOn.value = true
 }
 
 onMounted(() => {
