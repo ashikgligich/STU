@@ -10,7 +10,7 @@
         <div v-for="ship in ships.ships" :key="ship.id">
           <tr>
           <td align="right" @click="selectShip(ship)">{{ ship.ship }}</td>
-          <td align="right" img url="{{ ship.pic }}"></td>
+          <td align="right" @click="selectShip(ship)">{{ ship.pic }}</td>
         </tr>
         </div>
       </div>
