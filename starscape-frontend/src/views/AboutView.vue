@@ -3,20 +3,15 @@
     <div class="about">
       <h1></h1>
       <div class="shipselector">
-        <table align="center">
-            <tbody>
-      <div v-if="gotData">
-        
-        <div v-for="ship in ships.ships" :key="ship.id">
-          <tr>
-          <td align="right" @click="selectShip(ship)">{{ ship.ship }}</td>
-          <td align="right" @click="selectShip(ship)">{{ ship.pic }}</td>
-        </tr>
+        <div v-if="gotData">
+          <div v-for="ship in ships.ships" :key="ship.id">
+            <button @click="selectShip(ship)">
+              {{ ship.ship }}
+              <img :src="ship.img" :alt="'insert image of ' + ship.ship + ' here'" />
+            </button>
+          </div>
         </div>
       </div>
-    </tbody>
-          </table>
-    </div>
     </div>
   </div>
 </template>
@@ -33,26 +28,20 @@ table {
   border-collapse: separate;
   text-indent: initial;
   border-spacing: 2px;
- 
-    margin: 0px;
-    padding: 0px;
-    border: 0;
-    text-align: center;
-    
-  font-family: arial,helvetica,sans-serif;
+
+  margin: 0px;
+  padding: 0px;
+  border: 0;
+  text-align: center;
+
+  font-family: arial, helvetica, sans-serif;
   font-size: 16px;
 
-  text-align: right
- 
-  
-  
-
-
+  text-align: right;
 }
 td {
   display: table-cell;
   vertical-align: inherit;
-  
 }
 
 .shipselector {
@@ -62,7 +51,6 @@ td {
   align-items: center;
   justify-content: center;
   margin-top: 20px;
-  
 }
 </style>
 
