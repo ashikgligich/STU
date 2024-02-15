@@ -8,6 +8,38 @@ let ship = store.currentShip
 console.log(store.currentShip)
 console.log(ship)
 
+let shipOverview = [
+  { stat: ['Name', ship.ship] },
+  { stat: ['Class', ship.class] },
+  { stat: ['Line', ship.line] },
+  { stat: ['Faction', ship.faction] }
+]
+
+let shipCombatStats = [
+  { stat: ['Small Turret Slots', ship.s] },
+  { stat: ['Medium Turret Slots', ship.m] },
+  { stat: ['Point Defense Slots', ship.pdt] },
+  { stat: ['Shield', ship.shield] },
+  { stat: ['Shield Regen', ship.shieldRegen] },
+  { stat: ['Shield Deflection', ship.deflection] },
+  { stat: ['Hull', ship.hull] },
+  { stat: ['Hull Regeneration', ship.hullRegen] },
+  { stat: ['Hull Armor', ship.armor] },
+  { stat: ['Energy', ship.energy] },
+  { stat: ['Energy Regeneration', ship.energyRegen] },
+  { stat: ['Signal Range', ship.signalRange] },
+  { stat: ['Sensor Strength', ship.sensorStrength] }
+]
+
+let shipMobilityStats = [
+  { stat: ['Speed', ship.speed] },
+  { stat: ['Acceleration', ship.acceleration] },
+  { stat: ['Agility', ship.agility] },
+  { stat: ['Warp Speed', ship.warpSpeed] },
+  { stat: ['Warp Charge Time', ship.chargeTime] },
+  { stat: ['Cargo Slots', ship.cargo] }
+]
+
 function back() {
   router.push('/about')
 }
@@ -20,35 +52,39 @@ function back() {
     </div>
     <div>
       <h3>General Overview:</h3>
-      <h4>Name: {{ ship.ship }}</h4>
-      <h4>Class: {{ ship.class }}</h4>
-      <h4>Line: {{ ship.line }}</h4>
-      <h4>Faction: {{ ship.faction }}</h4>
+      <div v-for="stat in shipOverview" :key="stat">
+        <h4>{{ stat.stat[0] }}: {{ stat.stat[1] }}</h4>
+      </div>
     </div>
     <div>
-      <h3>Ship Combat Stats:</h3>
-      <h4>Small Turret Slots: {{ ship.s }}</h4>
-      <h4>Medium Turret Slots: {{ ship.m }}</h4>
-      <h4>Point Defense Turret Slots: {{ ship.pdt }}</h4>
-      <h4>Shield: {{ ship.shield }}</h4>
-      <h4>Shield Regen: {{ ship.shieldRegen }}/s</h4>
-      <h4>Shield Deflection: {{ ship.deflection }}</h4>
-      <h4>Hull: {{ ship.hull }}</h4>
-      <h4>Hull Regen: {{ ship.hullRegen }}/s</h4>
-      <h4>Hull Armor: {{ ship.armor }}</h4>
-      <h4>Energy: {{ ship.energy }}</h4>
-      <h4>Energy Regen: {{ ship.energyRegen }}/s</h4>
-      <h4>Signal Range: {{ ship.signalRange }}</h4>
-      <h4>Sensor Strength: {{ ship.sensorStrength }}</h4>
+      <h3>Combat Stats:</h3>
+      <div v-for="stat in shipCombatStats" :key="stat">
+        <h4 v-if="!stat.stat[0].includes('Regeneration')">
+          {{ stat.stat[0] }}: {{ stat.stat[1] }}
+        </h4>
+        <h4 v-if="stat.stat[0].includes('Regeneration')">
+          {{ stat.stat[0] }}: {{ stat.stat[1] }}/s
+        </h4>
+      </div>
     </div>
     <div>
       <h3>Ship Mobility Stats:</h3>
-      <h4>Speed: {{ ship.speed }}</h4>
-      <h4>Accelleration: {{ ship.accelleration }}/s</h4>
-      <h4>Agility: {{ ship.agility }}</h4>
-      <h4>Warp Speed: {{ ship.warpSpeed }}/s</h4>
-      <h4>Charge Time: {{ ship.chargeTime }}s</h4>
-      <h4>Cargo Slots: {{ ship.cargo }} Slots</h4>
+      <div v-for="stat in shipMobilityStats" :key="stat">
+        <h4
+          v-if="
+            !stat.stat[0].includes('Acceleration') &&
+            !stat.stat[0].includes('Warp Speed') &&
+            !stat.stat[0].includes('Charge Time') &&
+            !stat.stat[0].includes('Slots')
+          "
+        >
+          {{ stat.stat[0] }} : {{ stat.stat[1] }}
+        </h4>
+        <h4 v-if="stat.stat[0].includes('Acceleration') || stat.stat[0].includes('Warp Speed')">
+          {{ stat.stat[0] }}: {{ stat.stat[1] }}/s
+        </h4>
+        <h4 v-if="stat.stat[0].includes('Slots')">{{ stat.stat[0] }}: {{ stat.stat[1] }} Slots</h4>
+      </div>
     </div>
     <div>
       <h3>Rigs and Modules:</h3>
