@@ -1,15 +1,23 @@
 <script setup>
-import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import { shipStore } from '../stores/store.js'
 
 const store = shipStore()
+const router = useRouter()
 let ship = store.currentShip
 console.log(store.currentShip)
 console.log(ship)
+
+function back() {
+  router.push('/about')
+}
 </script>
 
 <template>
   <div>
+    <div>
+      <button @click="back">Back:</button>
+    </div>
     <div>
       <h3>General Overview:</h3>
       <h4>Name: {{ ship.ship }}</h4>
