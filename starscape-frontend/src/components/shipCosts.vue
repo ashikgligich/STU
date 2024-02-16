@@ -5,16 +5,16 @@ const store = shipStore()
 let ship = store.currentShip
 //console.log(store.currentShip)
 let resources = [
-  { resource: ['Korrelite', ship.korrelite] },
-  { resource: ['Reknite', ship.reknite] },
-  { resource: ['Gellium', ship.gellium] },
-  { resource: ['Axnit', ship.axnit] },
-  { resource: ['Narcor', ship.blucor] },
-  { resource: ['Red Narcor', ship.redcor] },
-  { resource: ['Vexnium', ship.vexnium] },
-  { resource: ['Blueprint', ship.bp] },
-  { resource: ['Drone Cores', ship.dc] },
-  { resource: ['Powercells', ship.pc] }
+  ['Korrelite', ship.korrelite],
+  ['Reknite', ship.reknite],
+  ['Gellium', ship.gellium],
+  ['Axnit', ship.axnit],
+  ['Narcor', ship.blucor],
+  ['Red Narcor', ship.redcor],
+  ['Vexnium', ship.vexnium],
+  ['Blueprint', ship.bp],
+  ['Drone Cores', ship.dc],
+  ['Powercells', ship.pc]
 ]
 console.log(resources)
 </script>
@@ -23,9 +23,7 @@ console.log(resources)
   <div>
     <h2>Costs:</h2>
     <div v-for="resource in resources" :key="resource">
-      <h4 v-if="resource.resource[1] >= 0">
-        {{ resource.resource[0] }}: {{ resource.resource[1] }}
-      </h4>
+      <h4 v-if="resource[1] >= 0">{{ resource[0] }}: {{ resource[1] }}</h4>
     </div>
   </div>
 </template>
