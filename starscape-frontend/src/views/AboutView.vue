@@ -64,6 +64,15 @@ td {
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+  color: #000;
+}
+.shipselector img {
+  height: 10vh;
+  
+  margin: 10px;
+  
+  border: 2px solid #000;
+  box-shadow: 0 0 10px #000;
 }
 </style>
 
