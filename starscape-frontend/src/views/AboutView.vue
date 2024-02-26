@@ -10,7 +10,6 @@
           <div v-if="!filterOn">
             <div v-for="ship in ships" :key="ship.id" v-memo="[ship]">
               <button @click="selectShip(ship)">
-                {{ ship.ship }}
                 <img :src="ship.pic" :alt="'insert image of ' + ship.ship + ' here'" />
               </button>
             </div>
