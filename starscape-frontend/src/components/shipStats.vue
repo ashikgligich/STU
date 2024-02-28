@@ -102,3 +102,20 @@ function back() {
     </div>
   </div>
 </template>
+
+<style scoped>
+button {
+  margin: 10px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+</style>
