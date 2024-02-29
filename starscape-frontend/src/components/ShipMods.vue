@@ -95,11 +95,16 @@ function back() {
         <h3>Rigs and Modules:</h3>
         <div v-for="modules in rigsNmodules" :key="modules">
           <h4>{{ modules[0] }}: {{ modules[1] }} Slots</h4>
+<<<<<<< HEAD
         </div>
         <div v-for="modules in rigsNmodules" :key="modules" id="flexboxBig">
           <div v-if="modules[1] >= 1" :class="modules[0]"></div>
           <div v-if="modules[1] >= 2" :class="modules[0]"></div>
           <div v-if="modules[1] >= 3" :class="modules[0]"></div>
+=======
+          <div v-if="modules[1] >= 1" :class="modules[0]"></div>
+          <div v-if="modules[1] >= 2" :class="modules[0]"></div>
+>>>>>>> 523775117434246c26c0dc78ad12c07356f57e50
         </div>
       </div>
       <div v-if="ship.special">
