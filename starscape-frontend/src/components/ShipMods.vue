@@ -93,12 +93,13 @@ function back() {
       </div>
       <div>
         <h3>Rigs and Modules:</h3>
-
         <div v-for="modules in rigsNmodules" :key="modules">
           <h4>{{ modules[0] }}: {{ modules[1] }} Slots</h4>
-          <div v-if="modules[1] >= 0" :id="modules[0]"></div>
-          <div v-if="modules[1] >= 1" :id="modules[0]"></div>
-          <div v-if="modules[1] >= 2" :id="modules[0]"></div>
+        </div>
+        <div v-for="modules in rigsNmodules" :key="modules" id="flexboxBig">
+          <div v-if="modules[1] >= 1" :class="modules[0]"></div>
+          <div v-if="modules[1] >= 2" :class="modules[0]"></div>
+          <div v-if="modules[1] >= 3" :class="modules[0]"></div>
         </div>
       </div>
       <div v-if="ship.special">
@@ -128,4 +129,40 @@ body {
   background-color: black;
   width: 50vw;
 }
+.flexboxBig{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  margin: 5vw;
+  width: 45vw;
+}
+.Rigs{
+  width: 5vw;
+  height: 5vw;
+  margin: 0.5vw;
+
+}
+.Subsystems{
+  width: 5vw;
+  height: 5vw;
+  background-color: grey;
+  margin: 0.5vw;
+}
+.Weapon{
+  background-color: red;
+}
+.Defense{
+  background-color: green;
+}
+.Engine{
+  background-color: blue;
+}
+.Reactor{
+  background-color: yellow;
+}
+
+
 </style>
+
+

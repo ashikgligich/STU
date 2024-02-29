@@ -125,6 +125,6 @@ button:hover {
 body {
   
   background-color: black;
-  width: 10vw;
+  width: 15vw;
 }
 </style>
