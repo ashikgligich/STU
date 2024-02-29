@@ -96,9 +96,8 @@ function back() {
 
         <div v-for="modules in rigsNmodules" :key="modules">
           <h4>{{ modules[0] }}: {{ modules[1] }} Slots</h4>
-          <div v-if="modules[1] >= 0" :id="modules[0]"></div>
-          <div v-if="modules[1] >= 1" :id="modules[0]"></div>
-          <div v-if="modules[1] >= 2" :id="modules[0]"></div>
+          <div v-if="modules[1] >= 1" :class="modules[0]"></div>
+          <div v-if="modules[1] >= 2" :class="modules[0]"></div>
         </div>
       </div>
       <div v-if="ship.special">
