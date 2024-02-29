@@ -55,65 +55,65 @@ function back() {
 
 <template>
   <body>
-    
-  
-  <div>
     <div>
-      <button @click="back">Back:</button>
-    </div>
-    <div>
-      <h3>General Overview:</h3>
-      <div v-for="stat in shipOverview" :key="stat">
-        <h4>{{ stat[0] }}: {{ stat[1] }}</h4>
+      <div>
+        <button @click="back">Back:</button>
+      </div>
+      <div>
+        <h3>General Overview:</h3>
+        <div v-for="stat in shipOverview" :key="stat">
+          <h4>{{ stat[0] }}: {{ stat[1] }}</h4>
+        </div>
+      </div>
+      <div>
+        <h3>Combat Stats:</h3>
+        <div v-for="stat in shipCombatStats" :key="stat">
+          <h4 v-if="!stat[0].includes('Regeneration')">{{ stat[0] }}: {{ stat[1] }}</h4>
+          <h4 v-if="stat[0].includes('Regeneration')">{{ stat[0] }}: {{ stat[1] }}/s</h4>
+        </div>
+      </div>
+      <div>
+        <h3>Ship Mobility Stats:</h3>
+        <div v-for="stat in shipMobilityStats" :key="stat">
+          <h4
+            v-if="
+              !stat[0].includes('Acceleration') &&
+              !stat[0].includes('Warp Speed') &&
+              !stat[0].includes('Charge Time') &&
+              !stat[0].includes('Slots')
+            "
+          >
+            {{ stat[0] }} : {{ stat[1] }}
+          </h4>
+          <h4 v-if="stat[0].includes('Acceleration') || stat[0].includes('Warp Speed')">
+            {{ stat[0] }}: {{ stat[1] }}/s
+          </h4>
+          <h4 v-if="stat[0].includes('Slots')">{{ stat[0] }}: {{ stat[1] }} Slots</h4>
+        </div>
+      </div>
+      <div>
+        <h3>Rigs and Modules:</h3>
+
+        <div v-for="modules in rigsNmodules" :key="modules">
+          <h4>{{ modules[0] }}: {{ modules[1] }} Slots</h4>
+          <div v-if="modules[1] >= 0" :id="modules[0]"></div>
+          <div v-if="modules[1] >= 1" :id="modules[0]"></div>
+          <div v-if="modules[1] >= 2" :id="modules[0]"></div>
+        </div>
+      </div>
+      <div v-if="ship.special">
+        <h3>Special Effects:</h3>
+        <h4>{{ ship.special }}</h4>
       </div>
     </div>
-    <div>
-      <h3>Combat Stats:</h3>
-      <div v-for="stat in shipCombatStats" :key="stat">
-        <h4 v-if="!stat[0].includes('Regeneration')">{{ stat[0] }}: {{ stat[1] }}</h4>
-        <h4 v-if="stat[0].includes('Regeneration')">{{ stat[0] }}: {{ stat[1] }}/s</h4>
-      </div>
-    </div>
-    <div>
-      <h3>Ship Mobility Stats:</h3>
-      <div v-for="stat in shipMobilityStats" :key="stat">
-        <h4
-          v-if="
-            !stat[0].includes('Acceleration') &&
-            !stat[0].includes('Warp Speed') &&
-            !stat[0].includes('Charge Time') &&
-            !stat[0].includes('Slots')
-          "
-        >
-          {{ stat[0] }} : {{ stat[1] }}
-        </h4>
-        <h4 v-if="stat[0].includes('Acceleration') || stat[0].includes('Warp Speed')">
-          {{ stat[0] }}: {{ stat[1] }}/s
-        </h4>
-        <h4 v-if="stat[0].includes('Slots')">{{ stat[0] }}: {{ stat[1] }} Slots</h4>
-      </div>
-    </div>
-    <div>
-      <h3>Rigs and Modules:</h3>
-      
-      <div v-for="modules in rigsNmodules" :key="modules">
-        <h4>{{ modules[0] }}: {{ modules[1] }} Slots</h4>
-      </div>
-      
-    </div>
-    <div v-if="ship.special">
-      <h3>Special Effects:</h3>
-      <h4>{{ ship.special }}</h4>
-    </div>
-  </div>
-</body>
+  </body>
 </template>
 
 <style scoped>
 button {
   margin: 10px;
   padding: 10px;
-  background-color: #4CAF50;
+  background-color: #4caf50;
   color: white;
   border: none;
   border-radius: 5px;
@@ -125,7 +125,6 @@ button:hover {
 }
 
 body {
-  
   background-color: black;
   width: 50vw;
 }
