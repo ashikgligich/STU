@@ -54,6 +54,9 @@ function back() {
 </script>
 
 <template>
+  <body>
+    
+  
   <div>
     <div>
       <button @click="back">Back:</button>
@@ -101,6 +104,7 @@ function back() {
       <h4>{{ ship.special }}</h4>
     </div>
   </div>
+</body>
 </template>
 
 <style scoped>
@@ -118,4 +122,9 @@ button:hover {
   background-color: #45a049;
 }
 
+body {
+  
+  background-color: black;
+  width: 10vw;
+}
 </style>

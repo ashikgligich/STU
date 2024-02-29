@@ -54,6 +54,9 @@ function back() {
 </script>
 
 <template>
+  <body>
+    
+  
   <div>
     <div>
       <button @click="back">Back:</button>
@@ -92,15 +95,18 @@ function back() {
     </div>
     <div>
       <h3>Rigs and Modules:</h3>
+      
       <div v-for="modules in rigsNmodules" :key="modules">
         <h4>{{ modules[0] }}: {{ modules[1] }} Slots</h4>
       </div>
+      
     </div>
     <div v-if="ship.special">
       <h3>Special Effects:</h3>
       <h4>{{ ship.special }}</h4>
     </div>
   </div>
+</body>
 </template>
 
 <style scoped>
@@ -118,4 +124,9 @@ button:hover {
   background-color: #45a049;
 }
 
+body {
+  
+  background-color: black;
+  width: 50vw;
+}
 </style>
