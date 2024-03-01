@@ -12,9 +12,3 @@ app.use(createPinia())
 app.use(router)
 
 app.mount('#app')
-
-
-import PrimeVue from 'primevue/config';
-
-
-app.use(PrimeVue);

@@ -95,8 +95,7 @@ function back() {
       </div>
       <div>
         <h3>Rigs and Modules:</h3>
-        <div v-for="modules in rigsNmodules" :key="modules">
-          <h4>{{ modules[0] }}: {{ modules[1] }} Slots</h4>
+        <div v-for="modules in rigsNmodules" :key="modules">  
         </div>
         <div v-for="modules in rigsNmodules" :key="modules" id="flexboxBig">
           <select v-if="modules[1] >= 1" :class="modules[0]">
