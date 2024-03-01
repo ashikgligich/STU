@@ -143,7 +143,7 @@ body {
   background-color: black;
   width: 50vw;
 }
-.flexboxBig{
+.flexboxBig {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -151,32 +151,27 @@ body {
   margin: 5vw;
   width: 45vw;
 }
-.Rigs{
+.Rigs {
   width: 5vw;
   height: 5vw;
   margin: 0.5vw;
-
 }
-.Subsystems{
+.Subsystems {
   width: 5vw;
   height: 5vw;
   background-color: grey;
   margin: 0.5vw;
 }
-.Weapon{
+.Weapon {
   background-color: red;
 }
-.Defense{
+.Defense {
   background-color: green;
 }
-.Engine{
+.Engine {
   background-color: blue;
 }
-.Reactor{
+.Reactor {
   background-color: yellow;
 }
-
-
 </style>
-
-
