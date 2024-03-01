@@ -2,6 +2,8 @@
 import { useRouter } from 'vue-router'
 import { shipStore } from '../stores/store.js'
 
+
+
 const store = shipStore()
 const router = useRouter()
 let ship = store.currentShip
@@ -97,12 +99,19 @@ function back() {
           <h4>{{ modules[0] }}: {{ modules[1] }} Slots</h4>
         </div>
         <div v-for="modules in rigsNmodules" :key="modules" id="flexboxBig">
-          <div v-if="modules[1] >= 1" :class="modules[0]">
-          <b-dropdown id="dropdown-1" text="Dropdown Button" class="m-md-2">    
-            <b-dropdown-item>First Action</b-dropdown-item>
-            <b-dropdown-item>Second Action</b-dropdown-item>
-            <b-dropdown-item>Third Action</b-dropdown-item>
-          </b-dropdown></div>
+          <select v-if="modules[1] >= 1" :class="modules[0]">
+          
+            
+
+
+  <option value="volvo">Volvo</option>
+  <option value="saab">Saab</option>
+  <option value="mercedes">Mercedes</option>
+  <option value="audi">Audi</option>
+
+          
+          
+          </select>
           <div v-if="modules[1] >= 2" :class="modules[0]"></div>
           <div v-if="modules[1] >= 3" :class="modules[0]"></div>
         </div>
