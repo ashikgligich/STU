@@ -97,14 +97,13 @@ function back() {
           <h4>{{ modules[0] }}: {{ modules[1] }} Slots</h4>
         </div>
         <div v-for="modules in rigsNmodules" :key="modules" id="flexboxBig">
-          <div v-if="modules[1] >= 1" :class="modules[0]">
-          <b-dropdown id="dropdown-1" text="Dropdown Button" class="m-md-2">    
-            <b-dropdown-item>First Action</b-dropdown-item>
-            <b-dropdown-item>Second Action</b-dropdown-item>
-            <b-dropdown-item>Third Action</b-dropdown-item>
-          </b-dropdown></div>
-          <div v-if="modules[1] >= 2" :class="modules[0]"></div>
-          <div v-if="modules[1] >= 3" :class="modules[0]"></div>
+          <div v-for="n in modules[1]" :key="n" :class="modules[0]">
+            <b-dropdown id="dropdown-1" text="Dropdown Button" class="m-md-2">
+              <b-dropdown-item>First Action</b-dropdown-item>
+              <b-dropdown-item>Second Action</b-dropdown-item>
+              <b-dropdown-item>Third Action</b-dropdown-item>
+            </b-dropdown>
+          </div>
         </div>
       </div>
       <div v-if="ship.special">
@@ -134,7 +133,7 @@ body {
   background-color: black;
   width: 50vw;
 }
-.flexboxBig{
+.flexboxBig {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
@@ -142,32 +141,27 @@ body {
   margin: 5vw;
   width: 45vw;
 }
-.Rigs{
+.Rigs {
   width: 5vw;
   height: 5vw;
   margin: 0.5vw;
-
 }
-.Subsystems{
+.Subsystems {
   width: 5vw;
   height: 5vw;
   background-color: grey;
   margin: 0.5vw;
 }
-.Weapon{
+.Weapon {
   background-color: red;
 }
-.Defense{
+.Defense {
   background-color: green;
 }
-.Engine{
+.Engine {
   background-color: blue;
 }
-.Reactor{
+.Reactor {
   background-color: yellow;
 }
-
-
 </style>
-
-
