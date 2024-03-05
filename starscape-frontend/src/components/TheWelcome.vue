@@ -1,6 +1,6 @@
 <template>
     <div>
-      <h1 v-if="answer">Correct</h1>
+      <h1 v-if="answer">Ships</h1>
       <h1 v-else>Incorrect</h1>
       <h2 v-for="animal in animals" :key="animal">{{ animal }}</h2>
     </div>
@@ -9,7 +9,7 @@
   
   <script setup>
   const answer = true;
-  const animals = ["Ape", "Baboon", "elk", "Joe Mama"];
+  const animals = ["Destroyer", "Frigatye", "Corvete", "Special"];
   </script>
   
   <style scoped>

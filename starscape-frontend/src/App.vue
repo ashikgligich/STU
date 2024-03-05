@@ -8,7 +8,7 @@ import HelloWorld from './components/HelloWorld.vue'
     <img alt="Ash Tek" class="logo" src="\ASH_TEK_logo.png" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="EZ" />
+      <HelloWorld msg="STU" />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
