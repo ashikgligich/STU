@@ -1,8 +1,28 @@
 <script setup>
+import { onMounted, ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { shipStore } from '../stores/store.js'
+import ModList from '../components/ModList.vue'
+
+let filterOn = ref(false)
+
+let gotData = ref(false)
+
+const wepMods = ref()
+
+// async function fetchWepMods() {
+//   const response = await fetch(
+//     'https://api.sheety.co/ea29051c955a22ec793735655dab1987/sTarscape/weaponRigs'
+//   )
+//   const array = await response.json()
+//   wepMods.value = array.wepMods
+//   gotData.value = true
+//   console.log(array)
+// }
 
 
+//   fetchWepMods()
+//   console.log(wepMods)
 
 const store = shipStore()
 const router = useRouter()
@@ -53,6 +73,9 @@ let rigsNmodules = [
 function back() {
   router.push('/about')
 }
+
+
+
 </script>
 
 <template>
@@ -103,10 +126,8 @@ function back() {
             
 
 
-  <option value="volvo">Volvo</option>
-  <option value="saab">Saab</option>
-  <option value="mercedes">Mercedes</option>
-  <option value="audi">Audi</option>
+            <ModList />
+  
 
           
           
