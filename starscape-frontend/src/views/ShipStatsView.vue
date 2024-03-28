@@ -2,6 +2,7 @@
 import shipCosts from '@/components/shipCosts.vue'
 import shipStats from '@/components/shipStats.vue'
 import ShipMods from '@/components/ShipMods.vue'
+import MainModel from '@/components/MainModel.vue';
 </script>
 
 <template>
@@ -9,7 +10,9 @@ import ShipMods from '@/components/ShipMods.vue'
    <div class="left-element">
     <ShipMods />
     </div>
-
+<div class="spacer">
+    
+</div>
     <div class="right-element">
     <shipCosts />
     <shipStats />
@@ -24,7 +27,7 @@ import ShipMods from '@/components/ShipMods.vue'
    
     padding: 0;
     margin: 0;
-    background-color: #ff00ff;
+    background-color: #200120;
     display: flex;
 }
 
@@ -34,6 +37,12 @@ import ShipMods from '@/components/ShipMods.vue'
     float: left;
 }
 
+.spacer {
+    float: center;
+
+    background: rgb(5, 5, 66);
+    width: 10px;
+}
 .right-element {
     background: red;
     
