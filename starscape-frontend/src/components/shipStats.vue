@@ -1,58 +1,130 @@
 <script setup>
-import { onMounted } from 'vue'
+import { useRouter } from 'vue-router'
 import { shipStore } from '../stores/store.js'
 
 const store = shipStore()
+const router = useRouter()
 let ship = store.currentShip
 console.log(store.currentShip)
 console.log(ship)
+
+let shipOverview = [
+  ['Name', ship.ship],
+  ['Class', ship.class],
+  ['Line', ship.line],
+  ['Faction', ship.faction]
+]
+
+let shipCombatStats = [
+  ['Small Turret Slots', ship.s],
+  ['Medium Turret Slots', ship.m],
+  ['Point Defense Slots', ship.pdt],
+  ['Shield', ship.shield],
+  ['Shield Regeneration', ship.shieldRegen],
+  ['Shield Deflection', ship.deflection],
+  ['Hull', ship.hull],
+  ['Hull Regeneration', ship.hullRegen],
+  ['Hull Armor', ship.armor],
+  ['Energy', ship.energy],
+  ['Energy Regeneration', ship.energyRegen],
+  ['Signal Range', ship.signalRange],
+  ['Sensor Strength', ship.sensorStrength]
+]
+
+let shipMobilityStats = [
+  ['Speed', ship.speed],
+  ['Acceleration', ship.acceleration],
+  ['Agility', ship.agility],
+  ['Warp Speed', ship.warpSpeed],
+  ['Warp Charge Time', ship.chargeTime],
+  ['Cargo Slots', ship.cargo]
+]
+
+let rigsNmodules = [
+  ['Weapon Rigs', ship.wep],
+  ['Defense Rigs', ship.def],
+  ['Engine Rigs', ship.eng],
+  ['Reactor Rigs', ship.rct],
+  ['Subsystems', ship.subsystems]
+]
+
+function back() {
+  router.push('/about')
+}
 </script>
 
 <template>
+  <body>
+    
+  
   <div>
     <div>
-      <h3>General Overview:</h3>
-      <h4>Name: {{ ship.ship }}</h4>
-      <h4>Class: {{ ship.class }}</h4>
-      <h4>Line: {{ ship.line }}</h4>
-      <h4>Faction: {{ ship.faction }}</h4>
+      <button @click="back">Back:</button>
     </div>
     <div>
-      <h3>Ship Combat Stats:</h3>
-      <h4>Small Turret Slots: {{ ship.s }}</h4>
-      <h4>Medium Turret Slots: {{ ship.m }}</h4>
-      <h4>Point Defense Turret Slots: {{ ship.pdt }}</h4>
-      <h4>Shield: {{ ship.shield }}</h4>
-      <h4>Shield Regen: {{ ship.shieldRegen }}/s</h4>
-      <h4>Shield Deflection: {{ ship.deflection }}</h4>
-      <h4>Hull: {{ ship.hull }}</h4>
-      <h4>Hull Regen: {{ ship.hullRegen }}/s</h4>
-      <h4>Hull Armor: {{ ship.armor }}</h4>
-      <h4>Energy: {{ ship.energy }}</h4>
-      <h4>Energy Regen: {{ ship.energyRegen }}/s</h4>
-      <h4>Signal Range: {{ ship.signalRange }}</h4>
-      <h4>Sensor Strength: {{ ship.sensorStrength }}</h4>
+      <h3>General Overview:</h3>
+      <div v-for="stat in shipOverview" :key="stat">
+        <h4>{{ stat[0] }}: {{ stat[1] }}</h4>
+      </div>
+    </div>
+    <div>
+      <h3>Combat Stats:</h3>
+      <div v-for="stat in shipCombatStats" :key="stat">
+        <h4 v-if="!stat[0].includes('Regeneration')">{{ stat[0] }}: {{ stat[1] }}</h4>
+        <h4 v-if="stat[0].includes('Regeneration')">{{ stat[0] }}: {{ stat[1] }}/s</h4>
+      </div>
     </div>
     <div>
       <h3>Ship Mobility Stats:</h3>
-      <h4>Speed: {{ ship.speed }}</h4>
-      <h4>Accelleration: {{ ship.accelleration }}/s</h4>
-      <h4>Agility: {{ ship.agility }}</h4>
-      <h4>Warp Speed: {{ ship.warpSpeed }}/s</h4>
-      <h4>Charge Time: {{ ship.chargeTime }}s</h4>
-      <h4>Cargo Slots: {{ ship.cargo }} Slots</h4>
+      <div v-for="stat in shipMobilityStats" :key="stat">
+        <h4
+          v-if="
+            !stat[0].includes('Acceleration') &&
+            !stat[0].includes('Warp Speed') &&
+            !stat[0].includes('Charge Time') &&
+            !stat[0].includes('Slots')
+          "
+        >
+          {{ stat[0] }} : {{ stat[1] }}
+        </h4>
+        <h4 v-if="stat[0].includes('Acceleration') || stat[0].includes('Warp Speed')">
+          {{ stat[0] }}: {{ stat[1] }}/s
+        </h4>
+        <h4 v-if="stat[0].includes('Slots')">{{ stat[0] }}: {{ stat[1] }} Slots</h4>
+      </div>
     </div>
     <div>
       <h3>Rigs and Modules:</h3>
-      <h4>Weapon Rigs: {{ ship.wep }} Slots</h4>
-      <h4>Defense Rigs: {{ ship.def }} Slots</h4>
-      <h4>Engine Rigs: {{ ship.eng }} Slots</h4>
-      <h4>Reactor Rigs: {{ ship.rct }} Slots</h4>
-      <h4>Subsystems: {{ ship.subsystems }} Slots</h4>
+      <div v-for="modules in rigsNmodules" :key="modules">
+        <h4>{{ modules[0] }}: {{ modules[1] }} Slots</h4>
+      </div>
     </div>
     <div v-if="ship.special">
-      <h4>Special Effects:</h4>
-      <h5>{{ ship.special }}</h5>
+      <h3>Special Effects:</h3>
+      <h4>{{ ship.special }}</h4>
     </div>
   </div>
+</body>
 </template>
+
+<style scoped>
+button {
+  margin: 10px;
+  padding: 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #45a049;
+}
+
+body {
+  
+  background-color: black;
+  width: 15vw;
+}
+</style>

@@ -1,21 +1,19 @@
 <script setup>
 import { RouterLink, RouterView } from 'vue-router'
 import HelloWorld from './components/HelloWorld.vue'
-
-
-
 </script>
 
 <template>
   <header>
-    <img alt="Ash Tek" class="logo" src="\public\ASH_TEK_logo.png" width="125" height="125" />
+    <img alt="Ash Tek" class="logo" src="\ASH_TEK_logo.png" width="125" height="125" />
 
     <div class="wrapper">
-      <HelloWorld msg="EZ" />
+      <HelloWorld msg="STU" />
 
       <nav>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">Ship Builder</RouterLink>
+        
       </nav>
     </div>
   </header>

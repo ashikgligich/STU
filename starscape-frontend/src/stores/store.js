@@ -8,6 +8,7 @@ export const shipStore = defineStore('shipStore', () => {
   let currentTurretLoadout = ref([]) //ship customization for turrets
   let currentModuleLoadout = ref([]) // ship customization for modules
   let currentRigLoadout = ref([]) // ship customization for rigs
+  let shipFilter = ref([]) //throw ship classes and stuff in here
 
   return {
     currentShip,
@@ -15,6 +16,7 @@ export const shipStore = defineStore('shipStore', () => {
     currentModule,
     currentModuleLoadout,
     currentTurretLoadout,
-    currentRigLoadout
+    currentRigLoadout,
+    shipFilter
   }
 })

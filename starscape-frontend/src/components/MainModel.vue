@@ -177,9 +177,10 @@ animate();
 </script>
 
 <style scoped>
-
+			
 			body { margin: 0; 
-				
+				height: 20vh;
+				width: 20vw;
 			}
 			
 		
