@@ -10,43 +10,47 @@ const operand = ref(parseInt(match.value[1], 10))
 const operator = ref(match.value[2])
 
 const moduleEffect = () => {
-  const filter = (value, key) => key === module.value.effectTarget //module prop
-  for (let key in store.currentShip) {
-    if (filter(store.currentShip[key], key)) {
-      switch (operator.value) {
-        case '+':
-          store.currentShip[key] = store.currentShip[key] + operand.value
-          break
-        case '-':
-          store.currentShip[key] = store.currentShip[key] - operand.value
-          break
-        case '*':
-          store.currentShip[key] = store.currentShip[key] * operand.value
-          break
+  module.value.effectTarget.forEach((effect) => {
+    const filter = (value, key) => key === effect
+    for (let key in store.currentShip) {
+      if (filter(store.currentShip[key], key)) {
+        switch (operator.value) {
+          case '+':
+            store.currentShip[key] = store.currentShip[key] + operand.value
+            break
+          case '-':
+            store.currentShip[key] = store.currentShip[key] - operand.value
+            break
+          case '*':
+            store.currentShip[key] = store.currentShip[key] * operand.value
+            break
+        }
       }
     }
-  }
+  })
 
   previousModule.value = module.value
 }
 
 const undoModuleEffect = () => {
-  const filter = (value, key) => key === previousModule.value.effectTarget //module prop
-  for (let key in store.currentShip) {
-    if (filter(store.currentShip[key], key)) {
-      switch (operator.value) {
-        case '+':
-          store.currentShip[key] = store.currentShip[key] - operand.value
-          break
-        case '-':
-          store.currentShip[key] = store.currentShip[key] + operand.value
-          break
-        case '*':
-          store.currentShip[key] = store.currentShip[key] / operand.value
-          break
+  module.value.effectTarget.forEach((effect) => {
+    const filter = (value, key) => key === effect //module prop
+    for (let key in store.currentShip) {
+      if (filter(store.currentShip[key], key)) {
+        switch (operator.value) {
+          case '+':
+            store.currentShip[key] = store.currentShip[key] - operand.value
+            break
+          case '-':
+            store.currentShip[key] = store.currentShip[key] + operand.value
+            break
+          case '*':
+            store.currentShip[key] = store.currentShip[key] / operand.value
+            break
+        }
       }
     }
-  }
+  })
 }
 
 const cycleModules = () => {
