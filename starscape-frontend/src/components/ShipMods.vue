@@ -1,14 +1,8 @@
 <script setup>
-import { onMounted, ref } from 'vue'
+import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 import { shipStore } from '../stores/store.js'
 import ModList from '../components/ModList.vue'
-
-let filterOn = ref(false)
-
-let gotData = ref(false)
-
-const wepMods = ref()
 
 // async function fetchWepMods() {
 //   const response = await fetch(
@@ -20,62 +14,55 @@ const wepMods = ref()
 //   console.log(array)
 // }
 
-
 //   fetchWepMods()
 //   console.log(wepMods)
 
 const store = shipStore()
 const router = useRouter()
-let ship = store.currentShip
-console.log(store.currentShip)
-console.log(ship)
 
-let shipOverview = [
-  ['Name', ship.ship],
-  ['Class', ship.class],
-  ['Line', ship.line],
-  ['Faction', ship.faction]
-]
+const shipOverview = ref([
+  ['Name', store.currentShip.ship],
+  ['Class', store.currentShip.class],
+  ['Line', store.currentShip.line],
+  ['Faction', store.currentShip.faction]
+])
 
-let shipCombatStats = [
-  ['Small Turret Slots', ship.s],
-  ['Medium Turret Slots', ship.m],
-  ['Point Defense Slots', ship.pdt],
-  ['Shield', ship.shield],
-  ['Shield Regeneration', ship.shieldRegen],
-  ['Shield Deflection', ship.deflection],
-  ['Hull', ship.hull],
-  ['Hull Regeneration', ship.hullRegen],
-  ['Hull Armor', ship.armor],
-  ['Energy', ship.energy],
-  ['Energy Regeneration', ship.energyRegen],
-  ['Signal Range', ship.signalRange],
-  ['Sensor Strength', ship.sensorStrength]
-]
+const shipCombatStats = ref([
+  ['Small Turret Slots', store.currentShip.s],
+  ['Medium Turret Slots', store.currentShip.m],
+  ['Point Defense Slots', store.currentShip.pdt],
+  ['Shield', store.currentShip.shield],
+  ['Shield Regeneration', store.currentShip.shieldRegen],
+  ['Shield Deflection', store.currentShip.deflection],
+  ['Hull', store.currentShip.hull],
+  ['Hull Regeneration', store.currentShip.hullRegen],
+  ['Hull Armor', store.currentShip.armor],
+  ['Energy', store.currentShip.energy],
+  ['Energy Regeneration', store.currentShip.energyRegen],
+  ['Signal Range', store.currentShip.signalRange],
+  ['Sensor Strength', store.currentShip.sensorStrength]
+])
 
-let shipMobilityStats = [
-  ['Speed', ship.speed],
-  ['Acceleration', ship.acceleration],
-  ['Agility', ship.agility],
-  ['Warp Speed', ship.warpSpeed],
-  ['Warp Charge Time', ship.chargeTime],
-  ['Cargo Slots', ship.cargo]
-]
+const shipMobilityStats = ref([
+  ['Speed', store.currentShip.speed],
+  ['Acceleration', store.currentShip.acceleration],
+  ['Agility', store.currentShip.agility],
+  ['Warp Speed', store.currentShip.warpSpeed],
+  ['Warp Charge Time', store.currentShip.chargeTime],
+  ['Cargo Slots', store.currentShip.cargo]
+])
 
-let rigsNmodules = [
-  ['Weapon Rigs', ship.wep],
-  ['Defense Rigs', ship.def],
-  ['Engine Rigs', ship.eng],
-  ['Reactor Rigs', ship.rct],
-  ['Subsystems', ship.subsystems]
-]
+let rigsNmodules = ref([
+  ['Weapon Rigs', store.currentShip.wep],
+  ['Defense Rigs', store.currentShip.def],
+  ['Engine Rigs', store.currentShip.eng],
+  ['Reactor Rigs', store.currentShip.rct],
+  ['Subsystems', store.currentShip.subsystems]
+])
 
 function back() {
   router.push('/about')
 }
-
-
-
 </script>
 
 <template>
@@ -118,19 +105,10 @@ function back() {
       </div>
       <div>
         <h3>Rigs and Modules:</h3>
-        <div v-for="modules in rigsNmodules" :key="modules">  
-        </div>
+        <div v-for="modules in rigsNmodules" :key="modules"></div>
         <div v-for="modules in rigsNmodules" :key="modules" id="flexboxBig">
           <select v-if="modules[1] >= 1" :class="modules[0]">
-          
-            
-
-
             <ModList />
-  
-
-          
-          
           </select>
           <div v-if="modules[1] >= 2" :class="modules[0]"></div>
           <div v-if="modules[1] >= 3" :class="modules[0]"></div>
