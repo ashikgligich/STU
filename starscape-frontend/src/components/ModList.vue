@@ -11,7 +11,7 @@ const wepMods = ref()
 
 async function fetchWepMods() {
     const response = await fetch(
-      'https://api.sheety.co/ea29051c955a22ec793735655dab1987/sTarscape/weaponRigs'
+      'https://api.sheety.co/9aee2b657f33b4b9cde173e45d295b27/sTarscape/turrets'
     )
     const array = await response.json()
     wepMods.value = array.weaponRigs
