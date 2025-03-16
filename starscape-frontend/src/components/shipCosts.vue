@@ -1,22 +1,20 @@
 <script setup>
+import { ref } from 'vue'
 import { shipStore } from '../stores/store.js'
 
 const store = shipStore()
-let ship = store.currentShip
-//console.log(store.currentShip)
-let resources = [
-  ['Korrelite', ship.korrelite],
-  ['Reknite', ship.reknite],
-  ['Gellium', ship.gellium],
-  ['Axnit', ship.axnit],
-  ['Narcor', ship.blucor],
-  ['Red Narcor', ship.redcor],
-  ['Vexnium', ship.vexnium],
-  ['Blueprint', ship.bp],
-  ['Drone Cores', ship.dc],
-  ['Powercells', ship.pc]
-]
-console.log(resources)
+const resources = ref([
+  ['Korrelite', store.currentShip.korrelite],
+  ['Reknite', store.currentShip.reknite],
+  ['Gellium', store.currentShip.gellium],
+  ['Axnit', store.currentShip.axnit],
+  ['Narcor', store.currentShip.blucor],
+  ['Red Narcor', store.currentShip.redcor],
+  ['Vexnium', store.currentShip.vexnium],
+  ['Blueprint', store.currentShip.bp],
+  ['Drone Cores', store.currentShip.dc],
+  ['Powercells', store.currentShip.pc]
+])
 </script>
 
 <template>
