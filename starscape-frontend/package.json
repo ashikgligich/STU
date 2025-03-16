@@ -13,6 +13,7 @@
   "dependencies": {
     "@tresjs/core": "^3.7.0",
     "chart.js": "^4.4.2",
+    "googleapis": "^146.0.0",
     "pinia": "^2.1.7",
     "primevue": "^3.49.1",
     "svelte-adapter": "^0.5.0",

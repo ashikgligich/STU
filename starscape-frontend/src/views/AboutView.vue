@@ -99,7 +99,7 @@ const shipClasses = [
 
 async function fetchShips() {
   const response = await fetch(
-    'https://api.sheety.co/9aee2b657f33b4b9cde173e45d295b27/sTarscape/turrets'
+    'https://api.sheety.co/9aee2b657f33b4b9cde173e45d295b27/sTarscape/ships'
   )
   const array = await response.json()
   ships.value = array.ships
