@@ -1,0 +1,81 @@
+{
+  "reactor_rigs": [
+    {
+      "R1gs": "Reactor Rigs",
+      "Energy capacity": "0",
+      "Energy regen": "0",
+      "L1m1t Per Sh1p": "0",
+      "id": 1
+    },
+    {
+      "R1gs": "0",
+      "Energy capacity": "0",
+      "Energy regen": "0",
+      "L1m1t Per Sh1p": "0",
+      "id": 2
+    },
+    {
+      "R1gs": "Battery 1",
+      "Energy capacity": "0.15",
+      "Energy regen": "-0.03",
+      "L1m1t Per Sh1p": "0",
+      "id": 3
+    },
+    {
+      "R1gs": "Battery 2",
+      "Energy capacity": "0.2",
+      "Energy regen": "-0.03",
+      "L1m1t Per Sh1p": "0",
+      "id": 4
+    },
+    {
+      "R1gs": "Battery 3",
+      "Energy capacity": "0.25",
+      "Energy regen": "-0.03",
+      "L1m1t Per Sh1p": "0",
+      "id": 5
+    },
+    {
+      "R1gs": "Battery 4",
+      "Energy capacity": "0.3",
+      "Energy regen": "-0.03",
+      "L1m1t Per Sh1p": "0",
+      "id": 6
+    },
+    {
+      "R1gs": "0",
+      "Energy capacity": "0",
+      "Energy regen": "0",
+      "L1m1t Per Sh1p": "0",
+      "id": 7
+    },
+    {
+      "R1gs": "Parallel Circuits 1",
+      "Energy capacity": "0.15",
+      "Energy regen": "-0.07",
+      "L1m1t Per Sh1p": "0",
+      "id": 8
+    },
+    {
+      "R1gs": "Parallel Circuits 2",
+      "Energy capacity": "0.2",
+      "Energy regen": "-0.07",
+      "L1m1t Per Sh1p": "0",
+      "id": 9
+    },
+    {
+      "R1gs": "Parallel Circuits 3",
+      "Energy capacity": "0.25",
+      "Energy regen": "-0.07",
+      "L1m1t Per Sh1p": "0",
+      "id": 10
+    },
+    {
+      "R1gs": "Parallel Circuits 4",
+      "Energy capacity": "0.3",
+      "Energy regen": "-0.07",
+      "L1m1t Per Sh1p": "0",
+      "id": 11
+    }
+  ]
+}

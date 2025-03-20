@@ -5,24 +5,25 @@ const store = shipStore()
 const props = defineProps(['selectableModules', 'number', 'moduleType'])
 const shipModule = ref()
 const previousModule = ref()
-const match = ref(shipModule.value.effect.match(/^([+-]?\d+)([+\-*])(\d+)$/)) //module prop
-const operand = ref(parseInt(match.value[1], 10))
-const operator = ref(match.value[2])
+const isDupe = ref(false)
 
-const moduleEffect = () => {
+const moduleEffect = (factor) => {
+  let match = shipModule.value.effect.match(/^([+-]?\d+)([+\-*])(\d+)$/)
+  let operand = parseInt(match[1], 10)
+  let operator = match[2]
   shipModule.value.effectTarget.forEach((effect) => {
     const filter = (value, key) => key === effect
     for (let key in store.currentShip) {
       if (filter(store.currentShip[key], key)) {
-        switch (operator.value) {
+        switch (operator) {
           case '+':
-            store.currentShip[key] = store.currentShip[key] + operand.value
+            store.currentShip[key] = store.currentShip[key] + operand * factor
             break
           case '-':
-            store.currentShip[key] = store.currentShip[key] - operand.value
+            store.currentShip[key] = store.currentShip[key] - operand * factor
             break
           case '*':
-            store.currentShip[key] = store.currentShip[key] * operand.value
+            store.currentShip[key] = store.currentShip[key] * operand * factor
             break
         }
       }
@@ -32,20 +33,26 @@ const moduleEffect = () => {
   previousModule.value = shipModule.value
 }
 
-const undoModuleEffect = () => {
+const undoModuleEffect = (factor, name) => {
+  let match
+  store.tempModuleSelection === name
+    ? (match = shipModule.value.effect.match(/^([+-]?\d+)([+\-*])(\d+)$/))
+    : (match = previousModule.value.effect.match(/^([+-]?\d+)([+\-*])(\d+)$/))
+  let operand = parseInt(match[1], 10)
+  let operator = match[2]
   shipModule.value.effectTarget.forEach((effect) => {
     const filter = (value, key) => key === effect //module prop
     for (let key in store.currentShip) {
       if (filter(store.currentShip[key], key)) {
-        switch (operator.value) {
+        switch (operator) {
           case '+':
-            store.currentShip[key] = store.currentShip[key] - operand.value
+            store.currentShip[key] = store.currentShip[key] - operand * factor
             break
           case '-':
-            store.currentShip[key] = store.currentShip[key] + operand.value
+            store.currentShip[key] = store.currentShip[key] + operand * factor
             break
           case '*':
-            store.currentShip[key] = store.currentShip[key] / operand.value
+            store.currentShip[key] = (store.currentShip[key] / operand) * factor
             break
         }
       }
@@ -53,9 +60,14 @@ const undoModuleEffect = () => {
   })
 }
 
-const cycleModules = () => {
-  previousModule.value ? undoModuleEffect() : console.log('No previous module')
-  moduleEffect()
+const cycleModules = (name) => {
+  if (store.tempModuleSelection === name) {
+    undoModuleEffect(1, name)
+    moduleEffect(2)
+    return
+  }
+  previousModule.value ? (isDupe.value ? undoModuleEffect(2) : undoModuleEffect(1)) : moduleEffect()
+  store.tempModuleSelection = name
 }
 </script>
 
@@ -67,7 +79,7 @@ const cycleModules = () => {
         v-model="shipModule"
         v-for="mod in props.selectableModules"
         :key="mod.name"
-        @change="cycleModules"
+        @change="cycleModules(mod.name)"
       >
         <option :value="mod">{{ mod.name }}</option>
       </select>
