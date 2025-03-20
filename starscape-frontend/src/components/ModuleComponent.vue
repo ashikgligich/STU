@@ -5,25 +5,25 @@ const store = shipStore()
 const props = defineProps(['selectableModules', 'number', 'moduleType'])
 const shipModule = ref()
 const previousModule = ref()
-const match = ref(shipModule.value.effect.match(/^([+-]?\d+)([+\-*])(\d+)$/)) //module prop
-const operand = ref(parseInt(match.value[1], 10))
-const operator = ref(match.value[2])
 const isDupe = ref(false)
 
 const moduleEffect = (factor) => {
+  let match = shipModule.value.effect.match(/^([+-]?\d+)([+\-*])(\d+)$/)
+  let operand = parseInt(match[1], 10)
+  let operator = match[2]
   shipModule.value.effectTarget.forEach((effect) => {
     const filter = (value, key) => key === effect
     for (let key in store.currentShip) {
       if (filter(store.currentShip[key], key)) {
-        switch (operator.value) {
+        switch (operator) {
           case '+':
-            store.currentShip[key] = store.currentShip[key] + operand.value * factor
+            store.currentShip[key] = store.currentShip[key] + operand * factor
             break
           case '-':
-            store.currentShip[key] = store.currentShip[key] - operand.value * factor
+            store.currentShip[key] = store.currentShip[key] - operand * factor
             break
           case '*':
-            store.currentShip[key] = store.currentShip[key] * operand.value * factor
+            store.currentShip[key] = store.currentShip[key] * operand * factor
             break
         }
       }
@@ -34,19 +34,22 @@ const moduleEffect = (factor) => {
 }
 
 const undoModuleEffect = (factor) => {
+  let match = previousModule.value.effect.match(/^([+-]?\d+)([+\-*])(\d+)$/)
+  let operand = parseInt(match[1], 10)
+  let operator = match[2]
   shipModule.value.effectTarget.forEach((effect) => {
     const filter = (value, key) => key === effect //module prop
     for (let key in store.currentShip) {
       if (filter(store.currentShip[key], key)) {
-        switch (operator.value) {
+        switch (operator) {
           case '+':
-            store.currentShip[key] = store.currentShip[key] - operand.value * factor
+            store.currentShip[key] = store.currentShip[key] - operand * factor
             break
           case '-':
-            store.currentShip[key] = store.currentShip[key] + operand.value * factor
+            store.currentShip[key] = store.currentShip[key] + operand * factor
             break
           case '*':
-            store.currentShip[key] = (store.currentShip[key] / operand.value) * factor
+            store.currentShip[key] = (store.currentShip[key] / operand) * factor
             break
         }
       }
