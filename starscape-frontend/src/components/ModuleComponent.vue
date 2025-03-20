@@ -33,8 +33,11 @@ const moduleEffect = (factor) => {
   previousModule.value = shipModule.value
 }
 
-const undoModuleEffect = (factor) => {
-  let match = previousModule.value.effect.match(/^([+-]?\d+)([+\-*])(\d+)$/)
+const undoModuleEffect = (factor, name) => {
+  let match
+  store.tempModuleSelection === name
+    ? (match = shipModule.value.effect.match(/^([+-]?\d+)([+\-*])(\d+)$/))
+    : (match = previousModule.value.effect.match(/^([+-]?\d+)([+\-*])(\d+)$/))
   let operand = parseInt(match[1], 10)
   let operator = match[2]
   shipModule.value.effectTarget.forEach((effect) => {
@@ -59,7 +62,7 @@ const undoModuleEffect = (factor) => {
 
 const cycleModules = (name) => {
   if (store.tempModuleSelection === name) {
-    undoModuleEffect(1)
+    undoModuleEffect(1, name)
     moduleEffect(2)
     return
   }
