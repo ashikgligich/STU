@@ -5,25 +5,29 @@ const store = shipStore()
 const props = defineProps(['selectableModules', 'number', 'moduleType'])
 const shipModule = ref()
 const previousModule = ref()
-const isDupe = ref(false)
 
-const moduleEffect = (factor) => {
-  let match = shipModule.value.effect.match(/^([+-]?\d+)([+\-*])(\d+)$/)
-  let operand = parseInt(match[1], 10)
-  let operator = match[2]
-  shipModule.value.effectTarget.forEach((effect) => {
-    const filter = (value, key) => key === effect
+const moduleEffect = () => {
+  shipModule.value.effect.forEach((effect) => {
+    let match = effect.match(/^([\w\s]+)([+\-*])\s*(\d*\.?\d+)$/)
+    let keyName = match[1].trim()
+    let operator = match[2]
+    let operand = parseFloat(match[3])
+    const filter = (value, key) => key === keyName
     for (let key in store.currentShip) {
       if (filter(store.currentShip[key], key)) {
         switch (operator) {
           case '+':
-            store.currentShip[key] = store.currentShip[key] + operand * factor
+            store.currentShip[key] = store.currentShip[key] + operand
             break
           case '-':
-            store.currentShip[key] = store.currentShip[key] - operand * factor
+            store.currentShip[key] = store.currentShip[key] - operand
             break
           case '*':
-            store.currentShip[key] = store.currentShip[key] * operand * factor
+            operand >= 1
+              ? (store.currentShip[key] =
+                  store.currentShip[key] + store.baseCurrentShipStats * operand)
+              : (store.currentShip[key] =
+                  store.currentShip[key] - store.baseCurrentShipStats * (1 - operand))
             break
         }
       }
@@ -33,26 +37,27 @@ const moduleEffect = (factor) => {
   previousModule.value = shipModule.value
 }
 
-const undoModuleEffect = (factor, name) => {
-  let match
-  store.tempModuleSelection === name
-    ? (match = shipModule.value.effect.match(/^([+-]?\d+)([+\-*])(\d+)$/))
-    : (match = previousModule.value.effect.match(/^([+-]?\d+)([+\-*])(\d+)$/))
-  let operand = parseInt(match[1], 10)
-  let operator = match[2]
+const undoModuleEffect = () => {
   shipModule.value.effectTarget.forEach((effect) => {
+    let match = previousModule.value.effect.match(/^([\w\s]+)([+\-*])\s*(\d*\.?\d+)$/)
+    let operator = match[2]
+    let operand = parseFloat(match[3])
     const filter = (value, key) => key === effect //module prop
     for (let key in store.currentShip) {
       if (filter(store.currentShip[key], key)) {
         switch (operator) {
           case '+':
-            store.currentShip[key] = store.currentShip[key] - operand * factor
+            store.currentShip[key] = store.currentShip[key] - operand
             break
           case '-':
-            store.currentShip[key] = store.currentShip[key] + operand * factor
+            store.currentShip[key] = store.currentShip[key] + operand
             break
           case '*':
-            store.currentShip[key] = (store.currentShip[key] / operand) * factor
+            operand >= 1
+              ? (store.currentShip[key] =
+                  store.currentShip[key] - store.baseCurrentShipStats * operand)
+              : (store.currentShip[key] =
+                  store.currentShip[key] + store.baseCurrentShipStats * (1 - operand))
             break
         }
       }
@@ -60,14 +65,8 @@ const undoModuleEffect = (factor, name) => {
   })
 }
 
-const cycleModules = (name) => {
-  if (store.tempModuleSelection === name) {
-    undoModuleEffect(1, name)
-    moduleEffect(2)
-    return
-  }
-  previousModule.value ? (isDupe.value ? undoModuleEffect(2) : undoModuleEffect(1)) : moduleEffect()
-  store.tempModuleSelection = name
+const cycleModules = () => {
+  previousModule.value ? undoModuleEffect(1) : moduleEffect()
 }
 </script>
 
@@ -79,7 +78,7 @@ const cycleModules = (name) => {
         v-model="shipModule"
         v-for="mod in props.selectableModules"
         :key="mod.name"
-        @change="cycleModules(mod.name)"
+        @change="cycleModules()"
       >
         <option :value="mod">{{ mod.name }}</option>
       </select>
