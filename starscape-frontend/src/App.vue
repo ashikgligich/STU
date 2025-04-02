@@ -81,6 +81,7 @@ nav a:first-of-type {
 
     padding: 1rem 0;
     margin-top: 1rem;
+    z-index: 10;
   }
 }
 </style>
