@@ -1,0 +1,159 @@
+{
+  "engine_rigs": [
+    {
+      "moduleName": "ENGINE RIGS",
+      "effect": "0",
+      "id": 1
+    },
+    {
+      "moduleName": "0",
+      "effect": "0",
+      "id": 2
+    },
+    {
+      "moduleName": "Fuel Injector 1",
+      "effect": "acceleration +25, agility *0.94, speed *0.975",
+      "id": 3
+    },
+    {
+      "moduleName": "Fuel Injector 2",
+      "effect": "acceleration +30, agility *0.94, speed *0.975",
+      "id": 4
+    },
+    {
+      "moduleName": "Fuel Injector 3",
+      "effect": "acceleration +35, agility *0.94, speed *0.975",
+      "id": 5
+    },
+    {
+      "moduleName": "Fuel Injector 4",
+      "effect": "acceleration +40, agility *0.94, speed *0.975",
+      "id": 6
+    },
+    {
+      "moduleName": "0",
+      "effect": "0",
+      "id": 7
+    },
+    {
+      "moduleName": "Lightweight Engines 1",
+      "effect": "acceleration +10, agility *0.9, speed +10",
+      "id": 8
+    },
+    {
+      "moduleName": "Lightweight Engines 2",
+      "effect": "acceleration +10, agility *0.9, speed +14",
+      "id": 9
+    },
+    {
+      "moduleName": "Lightweight Engines 3",
+      "effect": "acceleration +10, agility *0.9, speed +18",
+      "id": 10
+    },
+    {
+      "moduleName": "Lightweight Engines 4",
+      "effect": "acceleration +10, agility *0.9, speed +22",
+      "id": 11
+    },
+    {
+      "moduleName": "0",
+      "effect": "0",
+      "id": 12
+    },
+    {
+      "moduleName": "Warp Charger 1",
+      "effect": "chargeTime *0.75, energyRegen *0.94, warpSpeed *0.96",
+      "id": 13
+    },
+    {
+      "moduleName": "Warp Charger 2",
+      "effect": "chargeTime *0.70, energyRegen *0.94, warpSpeed *0.96",
+      "id": 14
+    },
+    {
+      "moduleName": "Warp Charger 3",
+      "effect": "chargeTime *0.65, energyRegen *0.94, warpSpeed *0.96",
+      "id": 15
+    },
+    {
+      "moduleName": "Warp Charger 4",
+      "effect": "chargeTime *0.60, energyRegen *0.94, warpSpeed *0.96",
+      "id": 16
+    },
+    {
+      "moduleName": "0",
+      "effect": "0",
+      "id": 17
+    },
+    {
+      "moduleName": "Warp Field Amplifier 1",
+      "effect": "warpSpeed *1.60, chargeTime *1.15, energy *0.94",
+      "id": 18
+    },
+    {
+      "moduleName": "Warp Field Amplifier 2",
+      "effect": "warpSpeed *1.75, chargeTime *1.15, energy *0.94",
+      "id": 19
+    },
+    {
+      "moduleName": "Warp Field Amplifier 3",
+      "effect": "warpSpeed *1.90, chargeTime *1.15, energy *0.94",
+      "id": 20
+    },
+    {
+      "moduleName": "Warp Field Amplifier 4",
+      "effect": "warpSpeed *2.05, chargeTime *1.15, energy *0.94",
+      "id": 21
+    },
+    {
+      "moduleName": "0",
+      "effect": "0",
+      "id": 22
+    },
+    {
+      "moduleName": "Engine Gimbals 1",
+      "effect": "agility *1.06, acceleration *0.96, speed *0.98",
+      "id": 23
+    },
+    {
+      "moduleName": "Engine Gimbals 2",
+      "effect": "agility *1.08, acceleration *0.96, speed *0.98",
+      "id": 24
+    },
+    {
+      "moduleName": "Engine Gimbals 3",
+      "effect": "agility *1.10, acceleration *0.96, speed *0.98",
+      "id": 25
+    },
+    {
+      "moduleName": "Engine Gimbals 4",
+      "effect": "agility *1.12, acceleration *0.96, speed *0.98",
+      "id": 26
+    },
+    {
+      "moduleName": "0",
+      "effect": "0",
+      "id": 27
+    },
+    {
+      "moduleName": "Exhaust Restrictor 1",
+      "effect": "signalRange -500, chargeTime *0.9, speed *0.975, agility *0.92",
+      "id": 28
+    },
+    {
+      "moduleName": "Exhaust Restrictor 2",
+      "effect": "signalRange -700, chargeTime *0.9, speed *0.975, agility *0.92",
+      "id": 29
+    },
+    {
+      "moduleName": "Exhaust Restrictor 3",
+      "effect": "signalRange -900, chargeTime *0.9, speed *0.975, agility *0.92",
+      "id": 30
+    },
+    {
+      "moduleName": "Exhaust Restrictor 4",
+      "effect": "signalRange -1100, chargeTime *0.9, speed *0.975, agility *0.92",
+      "id": 31
+    }
+  ]
+}

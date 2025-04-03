@@ -1,0 +1,284 @@
+{
+  "weapon_rigs": [
+    {
+      "moduleName": "Weapon Rigs",
+      "effect": "0",
+      "id": 1
+    },
+    {
+      "moduleName": "0",
+      "effect": "0",
+      "id": 2
+    },
+    {
+      "moduleName": "AP Rounds 1",
+      "effect": "damageToHull *0.95, armorBypass +1",
+      "id": 3
+    },
+    {
+      "moduleName": "AP Rounds 2",
+      "effect": "damageToHull *0.95, armorBypass +1.5",
+      "id": 4
+    },
+    {
+      "moduleName": "AP Rounds 3",
+      "effect": "damageToHull *0.95, armorBypass +2",
+      "id": 5
+    },
+    {
+      "moduleName": "AP Rounds 4",
+      "effect": "damageToHull *0.95, armorBypass +2.5",
+      "id": 6
+    },
+    {
+      "moduleName": "0",
+      "effect": "0",
+      "id": 7
+    },
+    {
+      "moduleName": "HE Rounds 1",
+      "effect": "damageToHull *1.1, damageToShield *0.9, projectileSpeed *0.96",
+      "id": 8
+    },
+    {
+      "moduleName": "HE Rounds 2",
+      "effect": "damageToHull *1.125, damageToShield *0.9, projectileSpeed *0.96",
+      "id": 9
+    },
+    {
+      "moduleName": "HE Rounds 3",
+      "effect": "damageToHull *1.15, damageToShield *0.9, projectileSpeed *0.96",
+      "id": 10
+    },
+    {
+      "moduleName": "HE Rounds 4",
+      "effect": "damageToHull *1.175, damageToShield *0.9, projectileSpeed *0.96",
+      "id": 11
+    },
+    {
+      "moduleName": "0",
+      "effect": "0",
+      "id": 12
+    },
+    {
+      "moduleName": "1on Rounds 1",
+      "effect": "damageToHull *0.9, damageToShield *1.1, projectileSpeed *0.96",
+      "id": 13
+    },
+    {
+      "moduleName": "1on Rounds 2",
+      "effect": "damageToHull *0.9, damageToShield *1.125, projectileSpeed *0.96",
+      "id": 14
+    },
+    {
+      "moduleName": "1on Rounds 3",
+      "effect": "damageToHull *0.9, damageToShield *1.15, projectileSpeed *0.96",
+      "id": 15
+    },
+    {
+      "moduleName": "1on Rounds 4",
+      "effect": "damageToHull *0.9, damageToShield *1.175, projectileSpeed *0.96",
+      "id": 16
+    },
+    {
+      "moduleName": "0",
+      "effect": "0",
+      "id": 17
+    },
+    {
+      "moduleName": "Heat Sink 1",
+      "effect": "projectileSpeed *0.92, heatGeneration *0.75",
+      "id": 18
+    },
+    {
+      "moduleName": "Heat Sink 2",
+      "effect": "projectileSpeed *0.92, heatGeneration *0.675",
+      "id": 19
+    },
+    {
+      "moduleName": "Heat Sink 3",
+      "effect": "projectileSpeed *0.92, heatGeneration *0.6",
+      "id": 20
+    },
+    {
+      "moduleName": "Heat Sink 4",
+      "effect": "projectileSpeed *0.92, heatGeneration *0.525",
+      "id": 21
+    },
+    {
+      "moduleName": "0",
+      "effect": "0",
+      "id": 22
+    },
+    {
+      "moduleName": "Nullifier Rounds 1",
+      "effect": "deflectorBypass +1, damageToShield *0.95",
+      "id": 23
+    },
+    {
+      "moduleName": "Nullifier Rounds 2",
+      "effect": "deflectorBypass +1.5, damageToShield *0.95",
+      "id": 24
+    },
+    {
+      "moduleName": "Nullifier Rounds 3",
+      "effect": "deflectorBypass +2, damageToShield *0.95",
+      "id": 25
+    },
+    {
+      "moduleName": "Nullifier Rounds 4",
+      "effect": "deflectorBypass +2.5, damageToShield *0.95",
+      "id": 26
+    },
+    {
+      "moduleName": "0",
+      "effect": "0",
+      "id": 27
+    },
+    {
+      "moduleName": "Enhanced Servos 1",
+      "effect": "rateOfFire *0.95, turretAgility *1.25",
+      "id": 28
+    },
+    {
+      "moduleName": "Enhanced Servos 2",
+      "effect": "rateOfFire *0.95, turretAgility *1.325",
+      "id": 29
+    },
+    {
+      "moduleName": "Enhanced Servos 3",
+      "effect": "rateOfFire *0.95, turretAgility *1.4",
+      "id": 30
+    },
+    {
+      "moduleName": "Enhanced Servos 4",
+      "effect": "rateOfFire *0.95, turretAgility *1.475",
+      "id": 31
+    },
+    {
+      "moduleName": "0",
+      "effect": "0",
+      "id": 32
+    },
+    {
+      "moduleName": "Heavy Bolt 1",
+      "effect": "rateOfFire *0.95, damagePerShot *1.075",
+      "id": 33
+    },
+    {
+      "moduleName": "Heavy Bolt 2",
+      "effect": "rateOfFire *0.95, damagePerShot *1.1",
+      "id": 34
+    },
+    {
+      "moduleName": "Heavy Bolt 3",
+      "effect": "rateOfFire *0.95, damagePerShot *1.125",
+      "id": 35
+    },
+    {
+      "moduleName": "Heavy Bolt 4",
+      "effect": "rateOfFire *0.95, damagePerShot *1.15",
+      "id": 36
+    },
+    {
+      "moduleName": "0",
+      "effect": "0",
+      "id": 37
+    },
+    {
+      "moduleName": "Rapid Bolt 1",
+      "effect": "heatGeneration *1.05, damagePerShot *0.95, rateOfFire 1.075",
+      "id": 38
+    },
+    {
+      "moduleName": "Rapid Bolt 2",
+      "effect": "heatGeneration *1.05, damagePerShot *0.95, rateOfFire 1.1",
+      "id": 39
+    },
+    {
+      "moduleName": "Rapid Bolt 3",
+      "effect": "heatGeneration *1.05, damagePerShot *0.95, rateOfFire 1.125",
+      "id": 40
+    },
+    {
+      "moduleName": "Rapid Bolt 4",
+      "effect": "heatGeneration *1.05, damagePerShot *0.95, rateOfFire 1.15",
+      "id": 41
+    },
+    {
+      "moduleName": "0",
+      "effect": "0",
+      "id": 42
+    },
+    {
+      "moduleName": "Swift Bolt 1",
+      "effect": "rateOfFire *0.95, projectileSpeed *1.25",
+      "id": 43
+    },
+    {
+      "moduleName": "Swift Bolt 2",
+      "effect": "rateOfFire *0.95, projectileSpeed *1.325",
+      "id": 44
+    },
+    {
+      "moduleName": "Swift Bolt 3",
+      "effect": "rateOfFire *0.95, projectileSpeed *1.40",
+      "id": 45
+    },
+    {
+      "moduleName": "Swift Bolt 4",
+      "effect": "rateOfFire *0.95, projectileSpeed *1.475",
+      "id": 46
+    },
+    {
+      "moduleName": "0",
+      "effect": "0",
+      "id": 47
+    },
+    {
+      "moduleName": "Targeter (CoreSec) 1",
+      "effect": "dmgVsDrones *1.25, dmgVsPirates *1.25, dmgVsNpcs *0.90, Limit +1",
+      "id": 48
+    },
+    {
+      "moduleName": "Targeter (Lycent1an) 1",
+      "effect": "dmgVsKavani *1.25, dmgVsForalkus *1.25, dmgVsLycentia *0, Limit +1",
+      "id": 49
+    },
+    {
+      "moduleName": "Targeter (Lycent1an) 2",
+      "effect": "dmgVsKavani *1.25, dmgVsForalkus *1.25, dmgVsLycentia *0, Limit +1",
+      "id": 50
+    },
+    {
+      "moduleName": "Targeter (Kavan1) 1",
+      "effect": "dmgVsLycentia *1.25, dmgVsForalkus *1.25, dmgVsKavani *0, Limit +1",
+      "id": 51
+    },
+    {
+      "moduleName": "Targeter (Kavan1) 2",
+      "effect": "dmgVsLycentia *1.25, dmgVsForalkus *1.25, dmgVsKavani*0, Limit +1",
+      "id": 52
+    },
+    {
+      "moduleName": "Targeter (Foralkus) 1",
+      "effect": "dmgVsKavani *1.25, dmgVsLycentia *1.25, dmgVsForalkus *0, Limit +1",
+      "id": 53
+    },
+    {
+      "moduleName": "Targeter (Foralkus) 2",
+      "effect": "dmgVsKavani *1.25, dmgVsLycentia *1.25, dmgVsForalkus *0, Limit +1",
+      "id": 54
+    },
+    {
+      "moduleName": "Targeter (Drone) 1",
+      "effect": "dmgVsDrones *0.75, dmgVsNpcs *1.25, Limit +1",
+      "id": 55
+    },
+    {
+      "moduleName": "Targeter (Drone) 2",
+      "effect": "dmgVsDrones *0.75, dmgVsNpcs *1.3, Limit +1",
+      "id": 56
+    }
+  ]
+}
