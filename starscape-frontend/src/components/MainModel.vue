@@ -20,6 +20,7 @@ onMounted(() => {
 //const backgroundTexture = textureLoader.load('/space-safari-background.png');
 //scene.background = backgroundTexture;
   scene.background = new THREE.Color(0x000000);
+  scene.fog = new THREE.Fog(0x404040, 1, 1000); // Set fog color and distance
 
   // Create a camera
   const camera = new THREE.PerspectiveCamera(45, container.clientWidth / container.clientHeight, 1, 1000);
@@ -42,14 +43,15 @@ onMounted(() => {
   controls.enableZoom = true;
   controls.enableRotate = true;
   controls.enablePan = true;
+  controls.autoRotate = true;
 
   // Add a plane
-  const planeGeometry = new THREE.PlaneGeometry(50, 50);
-  const planeMaterial = new THREE.MeshStandardMaterial({ color: 0x808080, side: THREE.DoubleSide });
-  const plane = new THREE.Mesh(planeGeometry, planeMaterial);
-  plane.rotation.x = -Math.PI / 2;
-  plane.receiveShadow = true;
-  scene.add(plane);
+  //const planeGeometry = new THREE.PlaneGeometry(50, 50);
+ // const planeMaterial = new THREE.MeshStandardMaterial({ color: 0x808080, side: THREE.DoubleSide });
+  //const plane = new THREE.Mesh(planeGeometry, planeMaterial);
+  //plane.rotation.x = -Math.PI / 2;
+  //plane.receiveShadow = true;
+  //scene.add(plane);
 
   // Add lights
   const light = new THREE.DirectionalLight(0xffffff, 1);
@@ -64,7 +66,7 @@ onMounted(() => {
   const loader = new GLTFLoader();
   loader.load('public/Models/CAD Model.gltf', (gltf) => {
     const model = gltf.scene;
-    model.position.set(0, 0, 0); // Center the model
+    model.position.set(0, 0, -7.5); // Center the model
 	model.scale.set(100, 100, 100); // Scale the model down
     model.castShadow = true; // Enable shadows for the model
     model.receiveShadow = true; // Allow the model to receive shadows
@@ -103,7 +105,7 @@ onMounted(() => {
 <style scoped>
 #threejs-container {
   width: 100%;
-  height: 500px;
+  height: 60vh;
   margin: 0 auto;
   border: 2px solid #ffffff;
   position: relative;
