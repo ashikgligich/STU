@@ -1,0 +1,49 @@
+{
+  "pdt": [
+    {
+      "PDT": "0",
+      "cost": "0",
+      "damagePerSecond": "0",
+      "damagePerShot": "0",
+      "sheilds": "Multiplier",
+      "hull": "0",
+      "id": 1
+    },
+    {
+      "PDT": "Tractor",
+      "cost": "1000",
+      "damagePerSecond": "0",
+      "damagePerShot": "0",
+      "sheilds": "0",
+      "hull": "0",
+      "id": 2
+    },
+    {
+      "PDT": "Repeater",
+      "cost": "1000",
+      "damagePerSecond": "12.5",
+      "damagePerShot": "2.5",
+      "sheilds": "1",
+      "hull": "1",
+      "id": 3
+    },
+    {
+      "PDT": "Pulse",
+      "cost": "1000",
+      "damagePerSecond": "10",
+      "damagePerShot": "5",
+      "sheilds": "1",
+      "hull": "1",
+      "id": 4
+    },
+    {
+      "PDT": "Chaingun",
+      "cost": "1000",
+      "damagePerSecond": "17.5",
+      "damagePerShot": "17.5",
+      "sheilds": "0.65",
+      "hull": "1.25",
+      "id": 5
+    }
+  ]
+}
