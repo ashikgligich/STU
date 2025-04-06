@@ -64,7 +64,7 @@ onMounted(() => {
 
   // Load the GLTF model
   const loader = new GLTFLoader();
-  loader.load('public/Models/CAD Model.gltf', (gltf) => {
+  loader.load('Models/CAD Model.gltf', (gltf) => {
     const model = gltf.scene;
     model.position.set(0, 0, -7.5); // Center the model
 	model.scale.set(100, 100, 100); // Scale the model down
