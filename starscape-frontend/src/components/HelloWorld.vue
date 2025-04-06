@@ -11,7 +11,7 @@ defineProps({
   <div class="greetings">
     <h1 class="green">{{ msg }}</h1>
     <h3>
-      Welcome to the Starscape ship builder.
+      Welcome to the Starscape ship builder. This is a work in progress, and we are constantly adding new features and ships. Please check back often for updates.
     </h3>
   </div>
 </template>
