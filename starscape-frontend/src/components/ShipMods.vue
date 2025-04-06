@@ -1,62 +1,58 @@
 <script setup>
-import { ref, onMounted } from 'vue'
 import ModuleComponent from './ModuleComponent.vue'
 import { shipStore } from '../stores/store.js'
-const store = shipStore()
-const wepRig = ref(false)
-const defRig = ref(false)
-const engRig = ref(false)
-const rctRig = ref(false)
+import { ref, onMounted } from 'vue'
 
-onMounted(() => {
-  setTimeout(() => {
-    wepRig.value = true
-  }, 10)
-  setTimeout(() => {
-    defRig.value = true
-  }, 20)
-  setTimeout(() => {
-    engRig.value = true
-  }, 30)
-  setTimeout(() => {
-    rctRig.value = true
-  }, 40)
+const store = shipStore()
+const weaponRigs = ref([])
+
+onMounted(async () => {
+  try {
+    const response = await fetch('/data/weapon_rigs.json')
+    if (!response.ok) {
+      throw new Error('Failed to load weapon_rigs.json')
+    }
+    weaponRigs.value = await response.json()
+    console.log('Loaded weapon rigs:', weaponRigs.value)
+  } catch (error) {
+    console.error('Error loading weapon rigs:', error)
+  }
 })
 </script>
 
 <template>
   <div>
-    <div v-if="wepRig">
+    <div>
       <h2>Weapon Rigs:</h2>
       <ModuleComponent
-        v-for="n in store.currentShip.wep"
+        v-for="n in store.currentShip.weaponRig"
         :key="n"
         :moduleType="'Weapon'"
         :number="n"
       />
     </div>
-    <div v-if="defRig">
+    <div>
       <h2>Defense Rigs:</h2>
       <ModuleComponent
-        v-for="n in store.currentShip.def"
+        v-for="n in store.currentShip.defenseRig"
         :key="n"
         :moduleType="'Defense'"
         :number="n"
       />
     </div>
-    <div v-if="engRig">
+    <div>
       <h2>Engine Rigs:</h2>
       <ModuleComponent
-        v-for="n in store.currentShip.eng"
+        v-for="n in store.currentShip.engineRig"
         :key="n"
         :moduleType="'Engine'"
         :number="n"
       />
     </div>
-    <div v-if="rctRig">
+    <div>
       <h2>Reactor Rigs:</h2>
       <ModuleComponent
-        v-for="n in store.currentShip.rct"
+        v-for="n in store.currentShip.reactorRig"
         :key="n"
         :moduleType="'Reactor'"
         :number="n"

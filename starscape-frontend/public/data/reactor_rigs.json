@@ -1,0 +1,59 @@
+{
+  "reactor_rigs": [
+    {
+      "moduleName": "Reactor Rigs",
+      "effects": "0",
+      "id": 1
+    },
+    {
+      "moduleName": "0",
+      "effects": "0",
+      "id": 2
+    },
+    {
+      "moduleName": "Battery 1",
+      "effects": "energy *1.15, energyRegen *0.97",
+      "id": 3
+    },
+    {
+      "moduleName": "Battery 2",
+      "effects": "energy *1.20, energyRegen *0.97",
+      "id": 4
+    },
+    {
+      "moduleName": "Battery 3",
+      "effects": "energy *1.25, energyRegen *0.97",
+      "id": 5
+    },
+    {
+      "moduleName": "Battery 4",
+      "effects": "energy *1.30, energyRegen *0.97",
+      "id": 6
+    },
+    {
+      "moduleName": "0",
+      "effects": "0",
+      "id": 7
+    },
+    {
+      "moduleName": "Parallel Circuits 1",
+      "effects": "energy *0.93, energyRegen *1.15",
+      "id": 8
+    },
+    {
+      "moduleName": "Parallel Circuits 2",
+      "effects": "energy *0.93, energyRegen *1.2",
+      "id": 9
+    },
+    {
+      "moduleName": "Parallel Circuits 3",
+      "effects": "energy *0.93, energyRegen *1.25",
+      "id": 10
+    },
+    {
+      "moduleName": "Parallel Circuits 4",
+      "effects": "energy *0.93, energyRegen *1.3",
+      "id": 11
+    }
+  ]
+}

@@ -1,14 +1,15 @@
 <template>
   <div>
     <div class="about">
-      <h1></h1>
+      <div class="filter">
       <div class="filterbutton" v-for="shipClass in shipClasses" :key="shipClass">
         <button @click="selectClass(shipClass)">{{ shipClass }}</button>
       </div>
+    </div>
       <div class="shipselector">
-        <div v-if="gotData">
-          <div v-if="!filterOn">
-            <div v-for="ship in ships" :key="ship.id" v-memo="[ship]">
+        <div id="data" v-if="gotData">
+          <div id="filter" v-if="!filterOn">
+            <div id="SinS" v-for="ship in ships" :key="ship.id" v-memo="[ship]">
               <button @click="selectShip(ship)">
                 
                 <img :src="ship.pic" :alt="'insert image of ' + ship.ship + ' here'" />
@@ -30,6 +31,19 @@
 </template>
 
 <style>
+#data > div {
+  background-color: aqua;
+  display: grid;
+  grid-template-columns: auto auto auto auto auto;
+  align-items: center;
+  justify-content: center;
+}
+
+#data > div > div {
+  width: 100px;
+  height: 120px;
+}
+
 @media (min-width: 1024px) {
   .about {
     min-height: 100vh;
@@ -59,13 +73,14 @@ td {
 
 .shipselector {
   float: left;
+  width: 40vw;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   margin-top: 20px;
   color: #000;
-}
+} 
 .shipselector img {
   height: 10vh;
   
@@ -74,6 +89,8 @@ td {
   border: 2px solid #000;
   box-shadow: 0 0 10px #000;
 }
+
+
 </style>
 
 <script setup>
@@ -98,13 +115,35 @@ const shipClasses = [
 ]
 
 async function fetchShips() {
-  const response = await fetch(
-    'https://api.sheety.co/9aee2b657f33b4b9cde173e45d295b27/sTarscape/ships'
-  )
-  const array = await response.json()
-  ships.value = array.ships
-  gotData.value = true
-  console.log(array)
+  try {
+    // Try loading the local JSON file
+    const localResponse = await fetch('/data/ships.json');
+    if (!localResponse.ok) {
+      throw new Error('Local JSON file not found');
+    }
+    const localData = await localResponse.json();
+    ships.value = localData.ships;
+    gotData.value = true;
+    console.log('Loaded ships from local JSON:', localData);
+  } catch (error) {
+    console.warn('Failed to load local JSON, falling back to API:', error);
+
+    // Fallback to the API
+    try {
+      const apiResponse = await fetch(
+        'https://api.sheety.co/9aee2b657f33b4b9cde173e45d295b27/sTarscape/ships'
+      );
+      if (!apiResponse.ok) {
+        throw new Error('API request failed');
+      }
+      const apiData = await apiResponse.json();
+      ships.value = apiData.ships;
+      gotData.value = true;
+      console.log('Loaded ships from API:', apiData);
+    } catch (apiError) {
+      console.error('Failed to load ships from both local JSON and API:', apiError);
+    }
+  }
 }
 
 function selectShip(ship) {

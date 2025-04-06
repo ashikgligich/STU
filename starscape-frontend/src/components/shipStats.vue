@@ -95,10 +95,10 @@ function back() {
           <h4>{{ modules[0] }}: {{ modules[1] }} Slots</h4>
         </div>
       </div>
-      <div v-if="ship.special">
+      <!-- <div v-if="ship.specialEffect">
         <h3>Special Effects:</h3>
         <h4>{{ ship.special }}</h4>
-      </div>
+      </div> -->
     </div>
   </body>
 </template>
