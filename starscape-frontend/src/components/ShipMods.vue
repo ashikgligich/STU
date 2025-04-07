@@ -4,20 +4,12 @@ import { shipStore } from '../stores/store.js'
 import { ref, onMounted } from 'vue'
 
 const store = shipStore()
-const weaponRigs = ref([])
 
-onMounted(async () => {
-  try {
-    const response = await fetch('/data/weapon_rigs.json')
-    if (!response.ok) {
-      throw new Error('Failed to load weapon_rigs.json')
-    }
-    weaponRigs.value = await response.json()
-    console.log('Loaded weapon rigs:', weaponRigs.value)
-  } catch (error) {
-    console.error('Error loading weapon rigs:', error)
-  }
-})
+
+import engineRigs from '../data/engineRigs.json'
+import reactorRigs from '../reactorRigs.json'
+import defenseRigs from '../defenseRigs.json'
+import weaponRigs from '../weaponRigs.json'
 </script>
 
 <template>
@@ -29,6 +21,7 @@ onMounted(async () => {
         :key="n"
         :moduleType="'Weapon'"
         :number="n"
+        selectableModules=weaponRigs
       />
     </div>
     <div>
