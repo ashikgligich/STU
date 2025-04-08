@@ -2,14 +2,23 @@
 import ModuleComponent from './ModuleComponent.vue'
 import { shipStore } from '../stores/store.js'
 import { ref, onMounted } from 'vue'
+import { reactive } from 'vue'
 
 const store = shipStore()
 
 
-import engineRigs from '../data/engineRigs.json'
-import reactorRigs from '../reactorRigs.json'
-import defenseRigs from '../defenseRigs.json'
-import weaponRigs from '../weaponRigs.json'
+const rigs = reactive({
+  weapon: [],
+  defense: [],
+  engine: [],
+  reactor: []
+})
+
+async function fetchData(who) {
+  const response = await fetch(`/data/${who}_rigs.json`)
+  if (!response.ok) throw new Error(`Failed to load ${who}_rigs.json`)
+  return (await response.json())[`${who}_rigs`]
+}
 </script>
 
 <template>
@@ -21,7 +30,8 @@ import weaponRigs from '../weaponRigs.json'
         :key="n"
         :moduleType="'Weapon'"
         :number="n"
-        selectableModules=weaponRigs
+        :selectableModules="'rigs.weapon.moduleName'"
+
       />
     </div>
     <div>
@@ -31,6 +41,7 @@ import weaponRigs from '../weaponRigs.json'
         :key="n"
         :moduleType="'Defense'"
         :number="n"
+        :selectableModules="'rigs.defense'"
       />
     </div>
     <div>
@@ -40,6 +51,7 @@ import weaponRigs from '../weaponRigs.json'
         :key="n"
         :moduleType="'Engine'"
         :number="n"
+        :selectableModules="'rigs.engine'"
       />
     </div>
     <div>
@@ -49,6 +61,7 @@ import weaponRigs from '../weaponRigs.json'
         :key="n"
         :moduleType="'Reactor'"
         :number="n"
+        :selectableModules="'rigs.reactor'"
       />
     </div>
   </div>
