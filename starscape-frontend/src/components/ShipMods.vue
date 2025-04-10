@@ -1,24 +1,25 @@
 <script setup>
+import weaponRigs from '@/data/weaponRigs.json'
+import defenseRigs from '@/data/defenseRigs.json'
+import engineRigs from '@/data/engineRigs.json'
+import reactorRigs from '@/data/reactorRigs.json'
 import ModuleComponent from './ModuleComponent.vue'
-import { shipStore } from '../stores/store.js'
 import { ref, onMounted } from 'vue'
-import { reactive } from 'vue'
-
+import { shipStore } from '../stores/store.js'
 const store = shipStore()
+const rigs = ref([])
 
-
-const rigs = reactive({
-  weapon: [],
-  defense: [],
-  engine: [],
-  reactor: []
+onMounted(async () => {
+  try {
+    ;[weaponRigs, defenseRigs, engineRigs, reactorRigs].forEach(async (url) => {
+      const response = await fetch(url)
+      const data = await response.json()
+      rigs.value.push(data)
+    })
+  } catch (error) {
+    console.error('Error fetching ship data:', error)
+  }
 })
-
-async function fetchData(who) {
-  const response = await fetch(`/data/${who}_rigs.json`)
-  if (!response.ok) throw new Error(`Failed to load ${who}_rigs.json`)
-  return (await response.json())[`${who}_rigs`]
-}
 </script>
 
 <template>
@@ -30,8 +31,7 @@ async function fetchData(who) {
         :key="n"
         :moduleType="'Weapon'"
         :number="n"
-        :selectableModules="'rigs.weapon.moduleName'"
-
+        :selectableModules="rigs[0]"
       />
     </div>
     <div>
@@ -41,7 +41,7 @@ async function fetchData(who) {
         :key="n"
         :moduleType="'Defense'"
         :number="n"
-        :selectableModules="'rigs.defense'"
+        :selectableModules="rigs[1]"
       />
     </div>
     <div>
@@ -51,7 +51,7 @@ async function fetchData(who) {
         :key="n"
         :moduleType="'Engine'"
         :number="n"
-        :selectableModules="'rigs.engine'"
+        :selectableModules="rigs[2]"
       />
     </div>
     <div>
@@ -61,7 +61,7 @@ async function fetchData(who) {
         :key="n"
         :moduleType="'Reactor'"
         :number="n"
-        :selectableModules="'rigs.reactor'"
+        :selectableModules="rigs[3]"
       />
     </div>
   </div>
