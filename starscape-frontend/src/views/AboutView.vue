@@ -12,7 +12,7 @@
             <div id="SinS" v-for="ship in ships" :key="ship.id" v-memo="[ship]">
               <button @click="selectShip(ship)">
                 
-                <img :src="ship.pic" :alt="'insert image of ' + ship.ship + ' here'" />
+                <img :src="ship.picture" :alt="'insert image of ' + ship.ship + ' here'" />
               </button>
             </div>
           </div>
@@ -20,7 +20,7 @@
             <div v-for="ship in store.shipFilter" :key="ship.id">
               <button @click="selectShip(ship)">
                 {{ ship.ship }}
-                <img :src="ship.pic" :alt="'insert image of ' + ship.ship + ' here'" />
+                <img :src="ship.picture" :alt="'insert image of ' + ship.ship + ' here'" />
               </button>
             </div>
           </div>

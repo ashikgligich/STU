@@ -87,7 +87,7 @@
       "subsystems": "2",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://frabjous-mandazi-24eb20.netlify.app/echelon.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/echelon.jpg",
       "id": 2
     },
     {
@@ -132,7 +132,7 @@
       "subsystems": "2",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://frabjous-mandazi-24eb20.netlify.app/horizon.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/horizon.jpg",
       "id": 3
     },
     {
@@ -177,7 +177,7 @@
       "subsystems": "2",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://frabjous-mandazi-24eb20.netlify.app/fortitude.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/fortitude.jpg",
       "id": 4
     },
     {
@@ -222,7 +222,7 @@
       "subsystems": "2",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://frabjous-mandazi-24eb20.netlify.app/bulwark.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/bulwark.jpg",
       "id": 5
     },
     {
@@ -267,7 +267,7 @@
       "subsystems": "2",
       "cargo": "0",
       "specialEffect": "Turret damage +5%",
-      "picture": "https://frabjous-mandazi-24eb20.netlify.app/loxodon.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/loxodon.jpg",
       "id": 6
     },
     {
@@ -312,7 +312,7 @@
       "subsystems": "3",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://frabjous-mandazi-24eb20.netlify.app/conciliator.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/conciliator.jpg",
       "id": 7
     },
     {
@@ -897,7 +897,7 @@
       "subsystems": "1",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://frabjous-mandazi-24eb20.netlify.app/chevron.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/chevron.jpg",
       "id": 20
     },
     {
@@ -942,7 +942,7 @@
       "subsystems": "2",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://frabjous-mandazi-24eb20.netlify.app/edict.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/edict.jpg",
       "id": 21
     },
     {
@@ -987,7 +987,7 @@
       "subsystems": "1",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://frabjous-mandazi-24eb20.netlify.app/infinity.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/infinity.jpg",
       "id": 22
     },
     {
@@ -1032,7 +1032,7 @@
       "subsystems": "1",
       "cargo": "0",
       "specialEffect": "Turret damage +10%",
-      "picture": "https://frabjous-mandazi-24eb20.netlify.app/knifejaw.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/knifejaw.jpg",
       "id": 23
     },
     {
@@ -1077,7 +1077,7 @@
       "subsystems": "1",
       "cargo": "0",
       "specialEffect": "Turret agility +75%",
-      "picture": "https://frabjous-mandazi-24eb20.netlify.app/liberty.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/liberty.jpg",
       "id": 24
     },
     {
@@ -1122,7 +1122,7 @@
       "subsystems": "1",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://frabjous-mandazi-24eb20.netlify.app/radix.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/radix.jpg",
       "id": 25
     },
     {
