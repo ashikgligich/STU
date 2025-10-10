@@ -11,23 +11,23 @@
       "id": 2
     },
     {
-      "moduleName": "Compos1te Armor 1",
-      "effect": "armorPoints +1.5, agility *0.95",
+      "moduleName": "Composite Armor 1",
+      "effect": "armor +1.5, agility *0.95",
       "id": 3
     },
     {
-      "moduleName": "Compos1te Armor 2",
-      "effect": "armorPoints +2, agility *0.96",
+      "moduleName": "Composite Armor 2",
+      "effect": "armor +2, agility *0.96",
       "id": 4
     },
     {
-      "moduleName": "Compos1te Armor 3",
-      "effect": "armorPoints +2.5, agility *0.97",
+      "moduleName": "Composite Armor 3",
+      "effect": "armor +2.5, agility *0.97",
       "id": 5
     },
     {
-      "moduleName": "Compos1te Armor 4",
-      "effect": "armorPoints +3, agility *0.98",
+      "moduleName": "Composite Armor 4",
+      "effect": "armor +3, agility *0.98",
       "id": 6
     },
     {
@@ -162,22 +162,22 @@
     },
     {
       "moduleName": "Enhanced Deflectors 1",
-      "effect": "deflection 1.5, shield *0.9",
+      "effect": "deflection +1.5, shield *0.9",
       "id": 33
     },
     {
       "moduleName": "Enhanced Deflectors 2",
-      "effect": "deflection 2, shield *0.9",
+      "effect": "deflection +2, shield *0.9",
       "id": 34
     },
     {
       "moduleName": "Enhanced Deflectors 3",
-      "effect": "deflection 2.5, shield *0.9",
+      "effect": "deflection +2.5, shield *0.9",
       "id": 35
     },
     {
       "moduleName": "Enhanced Deflectors 4",
-      "effect": "deflection 3, shield *0.9",
+      "effect": "deflection +3, shield *0.9",
       "id": 36
     },
     {
