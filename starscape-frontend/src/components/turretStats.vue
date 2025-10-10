@@ -1,16 +1,16 @@
 <script setup>
-import shipStore from '../stores/store.js'
-const store = shipStore()
+import { useShipStore } from '../stores/shipStore.js'
+const store = useShipStore()
 </script>
 
 <template>
   <div>
-    <h4>Name: {{ store.currentTurret.turrets }}</h4>
-    <h4>Type: {{ store.currentTurret.type }} turret</h4>
-    <h4>Damage per second: {{ store.currentTurret.dps }}/s</h4>
-    <h4>Damage per shot: {{ store.currentTurret.dpShot }}/s</h4>
+    <span>Name: {{ store.currentTurret.turrets }}</span>
+    <span>Type: {{ store.currentTurret.type }} turret</span>
+    <span>Damage per second: {{ store.currentTurret.dps }}/s</span>
+    <span>Damage per shot: {{ store.currentTurret.dpShot }}/s</span>
     <div v-if="store.currentTurret.shield !== 1">
-      <h4>Multipliers:</h4>
+      <span>Multipliers:</span>
       <h5>Shield: x{{ store.currentTurret.shield }}</h5>
       <h5>Hull: x{{ store.currentTurret.hull }}</h5>
     </div>

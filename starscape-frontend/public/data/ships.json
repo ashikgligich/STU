@@ -42,7 +42,7 @@
       "subsystems": "Subsystems",
       "cargo": "Cargo",
       "specialEffect": "Special",
-      "picture": "Picture",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/0",
       "id": 1
     },
     {
@@ -402,7 +402,7 @@
       "subsystems": "1",
       "cargo": "2",
       "specialEffect": "Mining rate +125%, Tractor speed +75%",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/yukon.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Yukon.png",
       "id": 9
     },
     {
@@ -537,7 +537,7 @@
       "subsystems": "1",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/halo.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Halo.png",
       "id": 12
     },
     {
@@ -582,7 +582,7 @@
       "subsystems": "2",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/judicator.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Judicator.png",
       "id": 13
     },
     {
@@ -627,7 +627,7 @@
       "subsystems": "1",
       "cargo": "0",
       "specialEffect": "Mining rate +100% Tractor speed +50%",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/kodiak.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Kodiak.png",
       "id": 14
     },
     {
@@ -672,7 +672,7 @@
       "subsystems": "1",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/phalanx.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Phalanx.png",
       "id": 15
     },
     {
@@ -717,7 +717,7 @@
       "subsystems": "1",
       "cargo": "0",
       "specialEffect": "Turret agility +75%",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/virtue.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Virtue.png",
       "id": 16
     },
     {
@@ -762,7 +762,7 @@
       "subsystems": "1",
       "cargo": "30",
       "specialEffect": "Turret damage -20%",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/galaxy.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Galaxy.png",
       "id": 17
     },
     {
@@ -807,7 +807,7 @@
       "subsystems": "1",
       "cargo": "24",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/shroud.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Shroud.png",
       "id": 18
     },
     {
@@ -852,7 +852,7 @@
       "subsystems": "1",
       "cargo": "8",
       "specialEffect": "Mining rate +75% Tractor speed +50%",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/vesta.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Vesta.png",
       "id": 19
     },
     {
@@ -1167,7 +1167,7 @@
       "subsystems": "1",
       "cargo": "20",
       "specialEffect": "Turret damage -20%",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/astero.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Astero.png",
       "id": 26
     },
     {
@@ -1212,7 +1212,7 @@
       "subsystems": "1",
       "cargo": "20",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/zubron.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Zubron.png",
       "id": 27
     },
     {
@@ -1257,7 +1257,7 @@
       "subsystems": "1",
       "cargo": "16",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/veil.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Veil.png",
       "id": 28
     },
     {
@@ -1302,7 +1302,7 @@
       "subsystems": "1",
       "cargo": "0",
       "specialEffect": "Mining rate +100% Tractor speed +50%",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/ozark.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Ozark.png",
       "id": 29
     },
     {
@@ -1347,7 +1347,7 @@
       "subsystems": "2",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/candiru.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Candiru.png",
       "id": 30
     },
     {
@@ -1392,7 +1392,7 @@
       "subsystems": "1",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/falcon.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Falcon.png",
       "id": 31
     },
     {
@@ -1437,7 +1437,7 @@
       "subsystems": "2",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/hybrid_paragon.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Hybrid Paragon.png",
       "id": 32
     },
     {
@@ -1482,7 +1482,7 @@
       "subsystems": "2",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/hybrid_polaris.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Hybrid Polaris.png",
       "id": 33
     },
     {
@@ -1527,7 +1527,7 @@
       "subsystems": "3",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/macaw.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Macaw.png",
       "id": 34
     },
     {
@@ -1572,7 +1572,7 @@
       "subsystems": "1",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/mackerel.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Mackerel.png",
       "id": 35
     },
     {
@@ -1617,7 +1617,7 @@
       "subsystems": "2",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/paragon.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Paragon.png",
       "id": 36
     },
     {
@@ -1662,7 +1662,7 @@
       "subsystems": "2",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/parrot.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Parrot.png",
       "id": 37
     },
     {
@@ -1707,7 +1707,7 @@
       "subsystems": "2",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/polaris.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Polaris.png",
       "id": 38
     },
     {
@@ -1752,7 +1752,7 @@
       "subsystems": "1",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/tetra.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Tetra.png",
       "id": 39
     },
     {
@@ -1797,7 +1797,7 @@
       "subsystems": "2",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/triazo.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Triazo.png",
       "id": 40
     },
     {
@@ -1842,7 +1842,7 @@
       "subsystems": "1",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/zenith.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Zenith.png",
       "id": 41
     },
     {
@@ -2022,7 +2022,7 @@
       "subsystems": "2",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/hybrid_claymore.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Hybrid Claymore.png",
       "id": 45
     },
     {
@@ -2067,7 +2067,7 @@
       "subsystems": "2",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/hybrid_luminar.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Hybrid Luminar.png",
       "id": 46
     },
     {
@@ -2202,7 +2202,7 @@
       "subsystems": "1",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/luster.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Luster.png",
       "id": 49
     },
     {
@@ -2247,7 +2247,7 @@
       "subsystems": "1",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/pirhana.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Pirhana.png",
       "id": 50
     },
     {
@@ -2292,7 +2292,7 @@
       "subsystems": "2",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/sabre.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Sabre.png",
       "id": 51
     },
     {
@@ -2337,7 +2337,7 @@
       "subsystems": "2",
       "cargo": "0",
       "specialEffect": "0",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/thresher.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Thresher.png",
       "id": 52
     },
     {
@@ -2427,7 +2427,7 @@
       "subsystems": "1",
       "cargo": "0",
       "specialEffect": "Storefront Capacity: 4",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/fargo.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Fargo.png",
       "id": 54
     },
     {
@@ -2472,7 +2472,7 @@
       "subsystems": "1",
       "cargo": "0",
       "specialEffect": "Storefront Capacity: 10",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/yuma.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Yuma.png",
       "id": 55
     },
     {
@@ -2517,7 +2517,7 @@
       "subsystems": "1",
       "cargo": "0",
       "specialEffect": "Starter, cannot be built or lost",
-      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/stratos.jpg",
+      "picture": "https://ashtech-gallery.netlify.app/starscapeShips/Stratos.png",
       "id": 56
     }
   ]

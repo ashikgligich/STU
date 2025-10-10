@@ -187,22 +187,22 @@
     },
     {
       "moduleName": "Rapid Bolt 1",
-      "effect": "heatGeneration *1.05, damagePerShot *0.95, rateOfFire 1.075",
+      "effect": "heatGeneration *1.05, damagePerShot *0.95, rateOfFire *1.075",
       "id": 38
     },
     {
       "moduleName": "Rapid Bolt 2",
-      "effect": "heatGeneration *1.05, damagePerShot *0.95, rateOfFire 1.1",
+      "effect": "heatGeneration *1.05, damagePerShot *0.95, rateOfFire *1.1",
       "id": 39
     },
     {
       "moduleName": "Rapid Bolt 3",
-      "effect": "heatGeneration *1.05, damagePerShot *0.95, rateOfFire 1.125",
+      "effect": "heatGeneration *1.05, damagePerShot *0.95, rateOfFire *1.125",
       "id": 40
     },
     {
       "moduleName": "Rapid Bolt 4",
-      "effect": "heatGeneration *1.05, damagePerShot *0.95, rateOfFire 1.15",
+      "effect": "heatGeneration *1.05, damagePerShot *0.95, rateOfFire *1.15",
       "id": 41
     },
     {
