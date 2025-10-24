@@ -82,5 +82,4 @@ import { storeToRefs } from 'pinia'
 
 const shipStore = useShipStore()
 const ship = storeToRefs(shipStore).currentShip
-ship.value.weaponRig = ship.value.defenseRig = ship.value.engineRig = ship.value.reactorRig = 0
 </script>
