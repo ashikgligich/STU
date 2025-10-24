@@ -82,4 +82,4 @@ import { storeToRefs } from 'pinia'
 
 const shipStore = useShipStore()
 const ship = storeToRefs(shipStore).currentShip
-</script>
+</script>112121111
